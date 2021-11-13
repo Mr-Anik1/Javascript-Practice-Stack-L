@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//forEach ব্যবহার করে কোন অ্যারেতে লুপ চালানো যায়....
+var arr=[1,2,3,4,5,6]
+arr.forEach(function(value,index,arr){
+ console.log(value,index,arr)
+})
+
+
+
+//forEach ব্যবহার করে যোগ 
+var sum=0
+arr.forEach(function(value,index,arr){
+ sum+=value
+})
+console.log(sum)
+
+
+
+
+
+
+
+
+//forEach কীভাবে কাজ করে 
+var a=[1,2,3,4,5]
+function each(a,cb){
+  for(var i=0;i<a.length;i++){
+   cb(a[i],i,a)
+  }
+}
+
+
+//ভেলু,ইনডেক্স,অ্যারে বের করা
+each(a,function(value,index,a){
+ console.log(value,index,a)
+})
+
+
+
+
+
+//সবগুলো ভেলুর যোগফল
+var sum=0
+each(a,function(value,index,a){
+ sum+=value
+})
+console.log(sum)
+
+
+
+//মান বাড়ানো
+each(a,function(value,index,a){
+ a[index]+=5
+})
+console.log(a)
+
+
+
+</script>
+</body>
+</html>

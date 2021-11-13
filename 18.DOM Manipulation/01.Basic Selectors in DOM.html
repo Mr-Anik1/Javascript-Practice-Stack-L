@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Anik Vai</title>
+</head>
+<body>
+
+<h1 id="title">Bangladesh</h1>
+
+
+<p class="lead">Hello Anik, I'm from Russia</p>
+<p class="lead">Bangladeshi Scientists</p>
+
+
+
+
+<ul>
+ <li name="list-item-one">Anik</li>
+ <li name="list-item-two">Manik</li>
+</ul>
+
+
+
+<script type="text/javascript">
+/* html body তে কোন Element select করার 
+জন্য Id,ClassName,TagName,Name 
+ব্যবহার করা হয়ে থাকে।
+*/
+
+let idSelect=document.getElementById('title')
+console.log(idSelect)
+/* html body তে কোন id select করার জন্য 
+document.getElementById() ব্যবহার করা হয়ে থাকে।
+ 
+যেমন এখনে h1 tag এর id="title" দেওয়া আছে। 
+তাই id টিকে select করার জন্য document.getElementById()
+এর ভেতরে "title" দিলে id টি select হবে। 
+
+★নোটঃ কোন html body তে প্রতিটি id ইউনিক হয়, 
+তাই getElement অর্থাৎ singular বুঝানো হয়েছে। 
+(pleural হলে Elements ব্যবহার করা হতো,)
+*/
+
+
+
+let classNameSelect=document.getElementsByClassName('lead')
+console.log(classNameSelect)
+/* class name ব্যবহার করে কোন Elements select
+করার জন্য document.getElementsByClassName()
+ব্যবহার করা হয়। 
+
+
+যেমন এখানে আমাদের p tag এ class="lead" দেওয়া 
+আছে, তাই lead class name যুক্ত কোন Elements
+select করার জন্য getElementsByClassName()
+এর মধ্যে "lead" দিতে হবে। 
+
+★class="lead" একাধিক জায়গায় আছে, অর্থাৎ pleural 
+তাই Elements ব্যবহার করা হয়েছে। 
+*/
+
+
+
+let tagNameSelect=document.getElementsByTagName('li')
+console.log(tagNameSelect)
+/* TagName ব্যবহার করে কোন Elements Select করার
+জন্য document.getElementsByTagName() ব্যবহার 
+করা হয়ে থাকে। 
+
+যেমন এখানে আমরা li ট্যাগগুলোকে select করার জন্য 
+document.getElementsByTagName() এর ভেতর 
+"li" দিলে, li যুক্ত সকল ট্যাগ select হয়ে যাবে। 
+
+
+★li একাধিক জায়গায় থাকতে পারে, অর্থাৎ pleural 
+তাই Elements ব্যবহার করা হয়েছে।
+*/
+
+
+
+let nameSelect=document.getElementsByName('list-item-one')
+console.log(nameSelect)
+/* name ব্যবহার করে কোন Elements Select করার 
+জন্য document.getElementsByName() ব্যবহার করা 
+হয়ে থাকে৷ 
+
+
+যেমন এখানে li tag এর ভেতরে name="list-item-one"
+দেওয়া আছে, তাই একে select করার জন্য
+document.getElementsByName() এর ভেতর 
+"list-item-one" দিলেই select হয়ে যাবে।
+*/
+</script>
+</body>
+</html>

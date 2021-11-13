@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//map 
+let nMap=new Map([
+   ['a',10],
+   ['b',20],
+   [{name:'Anik'},30]
+])
+console.log(nMap)
+/* Map() এর সবচেয়ে পাওয়ারফুল বিষয়টা হলো
+এখানে key হিসেবে যেকোন কিছু নেওয়া যায়!
+object,string এককথায় সবকিছু। 
+*/
+
+
+//কোন কিছু নতুন করে এড করা 
+nMap.set('c',40)
+console.log(nMap)
+/* set() এর মাধ্যমে map এ নতুন কিছু এড করা
+হয়। 
+*/
+
+
+
+
+//কোন কিছু ডিলিট করা
+nMap.delete('a')
+console.log(nMap)
+/* delete() এর মাধ্যমে কোন নির্দিষ্ট কিছু ডিলিট 
+করা যায়। ডিলিট করার ক্ষেত্রে শুধু key টা দিলেই 
+হবে৷ যেমন এখানে আমি 'a' কে ডিলিট করেছি। 
+*/
+
+
+
+//keys() Method
+console.log(nMap.keys())
+/* keys() মেথডের মাধ্যমে কোন Map এর 
+key গুলো বের করা হয়।
+*/
+
+
+
+
+//values() Method
+console.log(nMap.values())
+/* values() মেথডের মাধ্যমে কোন Map এর 
+ভেলুগুলো বের করা হয়। 
+*/
+
+
+
+
+//value & key সব চেক করা
+console.log(nMap.entries())
+
+
+
+
+// size Method 
+console.log(nMap.size)//3
+/* size এর মাধ্যমে কোন ম্যাপের সাইজ 
+বের করা হয়। 
+বিঃদ্রঃ size কোন ফাংশন না, তাই () দেওয়া
+হয়নি।
+*/
+
+
+
+
+//get Method
+console.log(nMap.get('b'))//20
+/* কোন নির্দিষ্ট key এর ডেটা বের করার জন্য 
+get() মেথড ব্যবহার করা হয়। যেমন এখানে আমি 
+'b' নামক key এর ডেটা বের করেছি। 
+*/
+
+
+//for of loop চালালাম
+for(let [k,v] of nMap){
+  console.log(k,v)
+}
+//key আর ভেলুগুলো বের করা হয়েছে। 
+
+
+
+
+
+
+//Map() টা পুরো ক্লিয়ার করা 
+nMap.clear()
+console.log(nMap)
+/* clear() এর মাধ্যমে কোন ম্যাপকে ক্লিয়ার 
+করা হয়। 
+*/
+
+
+</script>
+</body>
+</html>

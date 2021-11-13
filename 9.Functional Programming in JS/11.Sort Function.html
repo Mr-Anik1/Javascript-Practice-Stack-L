@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+/*Sort এর মাধ্যমে কোন অ্যারেকে ছোট থেকে বড়
+(Ascending) এবং বড় থেকে ছোট(Descending)
+করা যায়। 
+*/
+
+var a=[45,3,2,-2,7,-9,23,21,1,0,56,-78,43]
+
+//ছোট থেকে বড় (Ascending)
+var result=a.sort(function(a,b){
+  if(a>b){
+   return 1
+  }
+  else if(a<b){
+   return -1
+  }
+  else {
+   return 0
+  }
+})
+console.log(result)
+/*এখানে অ্যারেকে সর্ট করার জন্য প্রথমে sort 
+এর ভেতরে একটি callback Function নিতে
+হবে। ফাংশনের প্যারামিটারে a,b দিতে হবে। 
+
+যেহেতু ছোট থেকে বড় করব তাই if condition 
+এর মধ্যে a>b দিয়ে 1 return করব। তারপর 
+else if condition এর মধ্যে a<b দিয়ে 
+-1 return করব। অতঃপর else 0 return করব।
+
+
+note:
+ছোট থেকে বড়(Ascending) এর ক্ষেত্রেঃ
+a>b হলে return 1
+a<b হলে return -1
+
+*/
+
+
+//বড় থেকে ছোট(Descending)
+var result2=a.sort(function(a,b){
+  if(a>b){
+   return -1
+  }
+  else if(a<b){
+   return 1
+  }
+  else {
+   return 0
+  }
+})
+console.log(result2)
+/*যেহেতু বড় থেকে ছোট করব তাই if condition 
+এর মধ্যে a>b দিয়ে -1 return করব। তারপর 
+else if condition এর মধ্যে a<b দিয়ে 
+1 return করব। অতঃপর else 0 return করব।
+
+
+note:
+বড় থেকে ছোট (Descending) এর ক্ষেত্রেঃ
+a>b হলে return -1
+a<b হলে return 1
+*/
+
+
+//Objects এর ক্ষেত্রে sort
+var obj=[
+
+   { 
+     name:"A",
+     age:25
+   },
+   
+   {
+     name:"B",
+     age:17
+   },
+   
+   {
+     name:"C",
+     age:52
+   },
+   
+   {
+     name:"D",
+     age:5
+   }
+
+]
+
+var objSort=obj.sort(function(a,b){
+  if(a.age>b.age){
+   return 1
+  }
+  else if(a.age<b.age){
+   return -1
+  }
+  else{
+   return 0
+  }
+})
+
+console.log(objSort)
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

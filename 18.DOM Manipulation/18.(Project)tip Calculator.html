@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+#result{
+ display:none;
+}
+
+</style>
+</head>
+<body>
+
+<form id="tip-form">
+ Amount: <input type="number" id="amount"><br>
+ Range: <input type="range" id="tipInput">
+ <span id="tipOutput"></span><br>
+
+
+
+
+increase: <input type="range" id="in"><br>
+<span id="hi"></span>
+
+
+
+
+<div id="result">
+Increase+Previous Amount:<input type="number" id="show" disabled><br>
+Tip Amount: <input type="number" id="tipAmount" disabled><br>
+Total Amount: <input type="number" id="totalAmount" disabled>
+</div>
+</form>
+<script type="text/javascript">
+document.getElementById("tip-form").onchange=function(){
+  //selecting Element
+  let bill=Number(document.getElementById("amount").value)
+  const tipInput=document.getElementById("tipInput").value
+  const tipOutput=document.getElementById("tipOutput")
+  
+  
+  const inc=Number(document.getElementById("in").value)
+  const hi=document.getElementById("hi")
+  
+  
+  const show=document.getElementById("show")
+  const tipAmount=document.getElementById("tipAmount")
+  const totalAmount=document.getElementById("totalAmount")
+  const res=document.getElementById("result")
+  
+  
+ 
+  //calculation 
+  const myIn=bill+inc
+  const tipBill=myIn*(tipInput/100)
+  const finalBill=myIn+tipBill
+  
+  show.value=myIn.toFixed(2)
+  tipAmount.value=tipBill.toFixed(2)
+  totalAmount.value=finalBill.toFixed(2)
+  
+ 
+  //Result
+  tipOutput.innerHTML=`${tipInput}%`
+  hi.innerHTML=`${inc}`
+  res.style.display="block"
+  
+}
+   
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

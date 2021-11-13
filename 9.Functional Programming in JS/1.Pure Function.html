@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//pure Function 
+function a(n){
+return n*n
+}
+a(n)
+console.log(a(2))
+/*এটির কোন সাইড এফেক্ট নাই */
+
+
+
+//Not pure Function 
+var n={
+x:20,
+y:30
+}
+
+function China(n){
+n.x=100
+n.y=200
+}
+China(n)
+console.log(n)
+/*এটার একটা সাইড এফেক্ট আছে। কারণ 
+এটির মধ্যে n এর ভেলু চেঞ্জ করায় উপরের
+অবজেক্টেরও n এর ভেলু চেঞ্জ হয়ে গেছে*/
+
+
+</script>
+</body>
+</html>

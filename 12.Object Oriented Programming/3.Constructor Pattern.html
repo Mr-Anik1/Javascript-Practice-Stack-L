@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Creat Class Using Constructor Pattern 
+var MyConstructor=function(wid,hei){
+  this.width=wid
+  this.height=hei
+  this.hello=function(){
+  console.log("My Width is" + this.width)
+  console.log("My Height is" + this.height)
+  }
+}
+var result1=new MyConstructor(7,90)
+result1.hello()
+
+/*Constructor Pattern এ একটি ভেরিয়েবলের
+মধ্যে ফাংশন ক্রিয়েট করতে হয়। তবে ভেরিয়েবলটির
+প্রথম অক্ষর বড় হাতের দিতে হবে। এজন্য M বড়
+হাতের দিয়েছি। 
+
+
+Constructor Pattern কোন অবজেক্ট ব্যবহার 
+করা হয় না। তাই ফাংশনের ভিতরে প্রোপার্টি ও মেথডের
+আগে this দিতে হয়।
+
+
+result শো করার সময় যে ভেরিয়েবলের(MyConstructor)
+মধ্যে ফাংশনটি রাখা হয়েছিল তার তার আগে new keyword 
+দিতে হবে। 
+
+
+শর্তঃ
+★অবজেক্ট ক্রিয়েট করতে হয় না।
+
+★যে ভেরিয়েবলের মধ্যে ফাংশনটি রাখব ঐ 
+ভেরিয়েবলের প্রথম অক্ষর বড় হাতের হবে। 
+
+★ফাংশনের মধ্যে প্রতিটি প্রোপার্টি ও মেথডের
+আগে this বসাতে হবে। 
+
+★রেজাল্ট শো করানোর জন্য ফাংশনটি যে
+ভেরিয়েবলে রেখেছি সেটা কল করতে হবে তবে 
+ঐ ভেরিয়েবলের আগে new বসাতে হবে। 
+
+
+নোটঃnew মূলত একটি Empty Object Creat 
+করে।
+*/
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//ES6 এ Iterator
+let arr1=[4,5,6]
+let hi=arr1[Symbol.iterator]()
+console.log(hi.next())
+console.log(hi.next())
+console.log(hi.next())
+console.log(hi.next())
+/* এখানে অ্যারেকে iterate করা হয়েছে। 
+[Symbol.iterator]() একটি ফাংশন 
+*/
+
+
+//স্ট্রিং iterate করা
+let str='ANIK'
+let ni=str[Symbol.iterator]()
+console.log(ni.next())
+console.log(ni.next())
+console.log(ni.next())
+console.log(ni.next())
+console.log(ni.next())
+console.log(ni.next())
+
+
+
+
+
+//implement 
+let arr=[1,2,3]
+function it(collection){
+  let i=0
+  return {
+    next(){
+      return {
+        done:i>=collection.length,
+        value:collection[i++]
+      }
+    }
+  }
+}
+/*   এখানে done true তখনই হবে যখন i এর
+মান collection.length এর সমান বা বড় হবে৷
+collection[i] এর মানে হলো অ্যারের value. 
+i++ করার অর্থ i এর মান 1 করে বৃদ্ধি করা।
+
+এখানে অ্যারেটার length 3 
+i=0 তে value 1 এবং i<length  ★তাই done:false
+i=1 তে value 2 এবং i<length  ★তাই done:false
+i=2 তে value 3 এবং i<length  ★তাই done:false
+i=3 তে value undefined এবং i>=length  ★তাই done:true
+i=4 তে value undefined এবং i>=length  ★তাই done:true
+
+এরপর value তে যখনই i এর মান বাড়ানো হবে, 
+তখন সেটি অ্যারেটার length এর সমান হবে, আর 
+i=3 তে যেহেতু ভেলু নেই তাই value:undefined 
+দেখবে। আর done:true দেখাবে। 
+*/
+
+let anik=new it(arr)
+console.log(anik.next())
+console.log(anik.next())
+console.log(anik.next())
+console.log(anik.next())
+console.log(anik.next())
+
+
+
+</script>
+</body>
+</html>

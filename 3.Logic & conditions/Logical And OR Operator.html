@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//OR Operator Sortcart
+var name=""
+var fullname=name||"Mirazul Islam Anik "
+console.log(fullname)
+/* যদি নামের অপশন খালি থাকে তাহলে 
+fullname নামের অংশ হয়ে রেজাল্ট শো করবে।
+এখানে নামের অংশ খালি তাই ফুলনেম
+Mirazul Islam Anik শো করেছে.
+
+আর name দেওয়া থাকলে নেমই শো করবে।
+তখন ফুলনেম শো করবে না। */
+
+var name="Mr.Anik"
+var fullname=name||"Mirazul Islam Anik"
+console.log(fullname)
+/*এখানে name দেওয়া আছে Mr.Anik
+তাই আর ফুলনেম(Mirazul Islam Anik)শো 
+করেনি, শুধু name(Mr.Anik)শো করেছে। */
+
+//Logical AND(&&) Sortcart
+
+sun=true
+sun&&console.log("Own Power")
+/*যদি কোনকিছুর valu true হয়,
+তখন কেবল console.log শো করবে। 
+এখানে sun=true তাই console.log
+শো করেছে। 
+ 
+ 
+আবার কোনকিছুর Value false হলে 
+cinsole.log শো করবে না।
+*/
+
+moon=false
+moon&&console.log("Own Power")
+/*এখানে moon=false তাই 
+console.log শো করবে না। */
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//function expression 
+var addition= function(a,b){
+    return a+b
+}
+addition()
+var add=addition(1,2)
+console.log(add)
+/*কোন ভেরিয়েবলের মধ্যে ফাংশন স্টোর 
+করলে তাকে function expression বলে।
+এখানে addition নামক ভেরিয়েবলের মধ্যে
+function টি স্টোর করা হয়েছে। পরবর্তীতে 
+আবার add ভেরিয়েবলে addition রাখা হয়েছে। 
+
+
+
+আমরা জানি ফাংশনের কোন নাম থাকে,
+যেমন function a(){
+}
+কিন্তু উপরের ফাংশনের কোন নাম নেই,
+এধরণের ফাংশনকে function অ্যানিনোমাস বলে।
+*/
+
+
+
+
+//function expression এর মাধ্যমে নির্দিষ্ট টাইম পরে চেক
+setTimeout(function(){
+console.log("Hello I am Anik")
+},5000)
+/*"Hello I am Anik" এরা ৫ সেকেন্ড পরে 
+শো করবে।কারণ ৫০০০ মিলিসেকেন্ড = ৫ সেকেন্ড */
+
+
+</script>
+</body>
+</html>

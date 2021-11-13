@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//1 থেকে 10 প্রিন্ট with for loop
+for(var i=1;i<=10;i++){
+  console.log(i)
+}
+//1 থেকে 10 পর্যন্ত যোগফল প্রিন্ট with for loop
+var sum=0
+for(var i=1;i<=10;i++){
+  sum+=i
+}
+console.log('Result = '+sum)
+
+
+
+//1 থেকে 50 পর্যন্ত জোড় সংখ্যা প্রিন্ট with for loop
+for(var i=1;i<=50;i++){
+  if(i%2==0){
+    console.log(i)
+  }
+}
+
+
+//10 বার Anik print
+for(var i=0;i<10;i++){
+  console.log((i+1) + 'Anik')
+}
+
+//1 থেকে 100 পর্যন্ত বিজোড় সংখ্যার যোগফল with clue
+var sum=0
+for(var i=1;i<=100;i++){
+  if(i%2==1){
+    console.log(sum + '+' + i + '='+(sum+i))
+    sum+=i
+  }
+}
+console.log('Result= '+sum)
+
+//10  বার জোড় অনিক
+for(var i=1;i<=20;i++){
+  if(i%2==0){
+    console.log(i + 'Anik')
+  }
+}
+
+
+
+</script>
+</body>
+</html>

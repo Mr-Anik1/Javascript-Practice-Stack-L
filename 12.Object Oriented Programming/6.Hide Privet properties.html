@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+/* user থেকে কিছু হাইড করাকে abstraction
+বলে। 
+*/
+
+//hide privet properties 
+var hello=function(wid,hei){
+  this.width=wid
+  this.height=hei
+  
+  var position={
+   x:20,
+   y:-70
+  }
+  
+  var hex=function(){
+   console.log("X= " +position.x + " Y= " + position.y)
+   console.log("My Width is " + this.width)
+   console.log("My height is " + this.height)
+  }.bind(this)
+  
+  this.hi=function(){
+   hex()
+   console.log("Result is: " + this.width*this.height)
+  }
+}
+var re=new hello(4,5)
+re.hi()
+
+/* এখানে hex এবং position কে হাইড করা হয়েছে 
+ইউজারের কাছ থেকে৷ কারণ hex & position এখানে
+ভেরিয়েবল।
+*/
+
+</script>
+</body>
+</html>

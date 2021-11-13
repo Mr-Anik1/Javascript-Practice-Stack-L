@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Prototypical Inheritance 
+
+/* একটা অবজেক্ট ক্রিয়েট করব যেটা ইচ্ছামতো সব 
+কিছুর prototype এ ঢুকানো যাবে। এখানে Shape
+তৈরী করেছি যেটা square & circle এ ঢুকানো 
+হয়েছে।  
+*/
+
+function Shape(){
+ 
+}
+
+Shape.prototype.common=function(){
+  console.log("hello I'm Common")
+}
+
+/* Shape এর প্রোটোটাইপে common মেথডটি 
+ঢুকানো হয়েছে৷ 
+*/
+
+
+
+function Square(wid){
+ this.width=wid
+}
+Square.prototype=Object.create(Shape.prototype)
+
+/* Square এর প্রোটোটাইপে Shape এর প্রোটোটাইপ 
+ঢুকানো হয়েছে। Object.create(Shape.prototype)
+এর মাধ্যমে। এখন sqr.common() দিলে সেটাও 
+কাজ করবে এবং common মেথডে যা আছে তা শো 
+করবে। 
+*/
+var s1=new Square(30)
+console.log(s1)
+
+
+
+function Circle(){
+
+}
+Circle.prototype=Object.create(Shape.prototype)
+var c1= new Circle()
+console.log(c1)
+/* এখানে Circle এর প্রোটোটাইপে Shape এর 
+প্রোটোটাইপ ঢুকানো হয়েছে। 
+*/
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+var a={
+    
+    x:43,
+    y:56,
+    z:78,
+    k:32
+
+}
+
+//keys()
+console.log(Object.keys(a))
+/*Object.keys() এর মাধ্যমে কোন
+অবজেক্ট এর key গুলো বের করা হয়। 
+এখানে x,y,z,k বের করা হয়েছে। */
+
+
+//values()
+console.log(Object.values(a))
+/*Object.values() এর মাধ্যমে কোন
+অবজেক্ট এর key এর valu গুলো বের করা হয়। 
+এখানে x,y,z,k এর ভেলু বের করা হয়েছে। */
+
+
+//entries()
+console.log(Object.entries(a))
+/*Object.entries() এর মাধ্যমে কোন
+অবজেক্ট এর key এবং valu গুলো একসাথে
+বের করা হয়। 
+*/
+
+
+
+
+
+//অবজেক্ট ক্লোন করা
+var a2=Object.assign({}, a)
+console.log(a2)
+
+</script>
+</body>
+</html>

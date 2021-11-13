@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<form id="hi">
+<label>Whats Your Name</label><br>
+<input type="text" name="Name:" placeholder="Enter Your Name"><br>
+<label>Whats Your Email</label><br>
+<input type="email" name="E-mail" placeholder="Enter Your E-mail"><br>
+<label>Whats Your Password</label><br>
+<input type="password" name="Password" placeholder="Enter Your Password"><br>
+<input type="submit">
+</form>
+<p>Your Details
+<label id="go"></label>
+</p>
+
+<script type="text/javascript">
+let pa=document.getElementById("go")
+let form=document.getElementById("hi")
+form.addEventListener("submit",function(e){
+  e.preventDefault()
+  
+  let formData={};
+  [...this.elements].forEach(el=>{
+    if(el.type!=="submit"){
+      formData[el.name]=el.value
+    }
+  })
+  pa.innerHTML=formData
+  this.reset()
+})
+</script>
+</body>
+</html>

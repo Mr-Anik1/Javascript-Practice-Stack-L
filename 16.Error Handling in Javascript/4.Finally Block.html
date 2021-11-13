@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+try{
+console.log('I am Mr.Anik')
+throw new Error('I am Your Error')//নিজে Error তৈরী করলাম
+console.log('What\'s Your Name')
+}
+catch(e){
+ console.log(e.message)
+}
+finally{
+ console.log('I am Finally block')//finally block
+}
+/* finally{} ব্লকের কাজই হলো try block বা 
+catch block যেকোন একটা এক্সিকিউট হোক না কেন 
+তার পরে এটা এক্সিকিউট হবে।
+
+যেমন এখানে Error পেয়ে catch block এর ম্যাসেজ 
+শো করার পর finally block এক্সিকিউট হয়েছে। 
+*/
+
+
+
+
+
+
+try{
+console.log('I am Mr.Anik')
+//throw new Error('I am Your Error')//নিজে Error তৈরী করলাম
+console.log('What\'s Your Name')
+}
+catch(e){
+ console.log(e.message)
+}
+finally{
+ console.log('I am Finally block')//finally block
+}
+/* এখানে try block এ কোন Error পায়নি তাই
+catch block এর ম্যাসেজ শো করেনি।
+তবে ঠিকই finally block এক্সিকিউট হয়েছে। 
+
+★পরিশেষে বলা যায় যাই ঘটুক না কেন, finally block 
+এক্সিকিউট হবেই। 
+*/
+
+
+</script>
+</body>
+</html>

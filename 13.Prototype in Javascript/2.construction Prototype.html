@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//construction prototype of function
+function person(nam){
+ this.name=nam
+}
+
+person.prototype.PI=3.1416
+/* এর মাধ্যমে person এর prototype এ 
+PI এড করা হয়েছে। 
+*/
+
+
+
+var p1=new person("Anik")
+
+console.log(Object.getPrototypeOf(p1))
+console.log(person.prototype)
+//prototype বের করার সিস্টেম 
+
+</script>
+</body>
+</html>

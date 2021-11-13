@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="container">
+
+<h1>I Love Bangladesh </h1>
+
+<ul id="list">
+ <li>Anik</li>
+ <li>Manik</li>
+ <li>Tonik</li>
+</ul>
+
+</div>
+<script type="text/javascript">
+/* ★loop throw HTML collection★
+
+html collection Array লাইক ডাটা স্টাকচার 
+কিন্তু প্রকৃতপক্ষে Array না। তাই এখানে ডাইরেক্ট লুপ 
+চালানো যাবে না। 
+
+প্রথমে html collection কে Array তে রূপান্তর 
+করে তারপর loop চালাতে হবে। 
+*/
+
+let myList=document.getElementsByTagName('li')
+
+let listItems=[...myList]
+/* ES6 এর Spread ব্যবহার করে myList নামক 
+html collection কে অ্যারেতে রূপান্তর করলাম!
+
+আরও দুটি উপায় আছে myList কে অ্যারে বানানোরঃ-
+
+★let listItems=Array.from(myList)
+★let listItems=Array.prototype.slice.apply(myList)
+
+তবে আমরা সবসময় ES6 এর নিয়মে Spread এর মাধ্যমে 
+HTML collection কে অ্যারে বানাব।
+*/
+
+
+listItems.forEach((li,index)=>{
+   let text=li.innerHTML
+   li.innerHTML=`${index}. ${text}`
+})
+/* listItems এ আমরা forEach লুপ চালিয়েছি,
+এর ভেতরে অ্যারো ফাংশন ক্রিয়েট করে প্যারামিটারে
+li এবং index দিয়েছি, পরে text নামক একটি 
+ভেরিয়েবলের মধ্যে li.innerHTML স্টোর করেছি। 
+এরপর li.innerHTML এর মধ্যে টেমপ্লেট স্টিং 
+এর মাঝে index এবং text বসিয়েছি। 
+
+
+এখন রেজাল্টে দেখব li এর ভেলুগুলোর আগে
+0,1,2... এরকম বসেছে(অর্থাৎ ইনডেক্সিং হয়েছে)!
+*/
+</script>
+</body>
+</html>

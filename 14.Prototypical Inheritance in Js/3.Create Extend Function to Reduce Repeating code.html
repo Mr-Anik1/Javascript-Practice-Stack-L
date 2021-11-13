@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//create extend function to reduce repeating code
+
+function extend(child,parant){
+  child.prototype=Object.create(parant.prototype)
+}
+/* এই ফাংশনটি ব্যবহারের কারণে কোড ডুপ্লিকেশন 
+হবে না। একই জিনিস বারবার লিখতে হবে না। 
+*/
+
+
+
+
+
+
+function Shape(color){
+  this.color=color
+}
+
+Shape.prototype.common=function(){
+ console.log("Hello Common")
+}
+
+
+function Square(wid,color){
+ Shape.call(this,color)//এখানে this হলো অবজেক্ট 
+ this.width=wid
+}
+extend(Square,Shape)
+/* এখানে উপরের extend function কল করা 
+হয়েছে। এখানে child হলো Square এবং parant
+হলো Shape.
+
+extend function কল করার ফলে এরকম হবেঃ-
+Squre(child).prototype=Object create(Shape(parant).prototype)
+
+এই ফাংশন ব্যবহারের কারণে অতিরিক্ত লিখতে হচ্ছে
+না।আর এটা অসংখ্যবার ব্যবহার করা যাবে। 
+*/
+var s1=new Square(30,"green")
+console.log(s1)
+
+
+
+
+
+function Circle(radious,color){
+ Shape.call(this,color)
+ this.radious=radious
+}
+extend(Circle,Shape)
+/* ঐ extend function টা ব্যবহারের ফলে 
+এখানেও কম লিখতে হলো। 
+
+এখানে Circle হলো child
+এবং  Shape  হলো  parant
+*/
+var c1=new Circle(30,"red")
+console.log(c1)
+
+
+
+</script>
+</body>
+</html>

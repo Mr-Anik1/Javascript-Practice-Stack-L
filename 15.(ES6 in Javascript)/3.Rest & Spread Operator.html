@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/* rest & spread operator
+★rest অপারেটরেও তিনটা ডট এবং spred 
+অপারেটরেও তিনটা ডট। 
+
+★কোন ফাংশনের প্যারামিটারে তিনটা ডট (...something)
+দিয়ে কাজ করলে সেটা rest অপারেটর। অর্থাৎ, rest 
+operator শুধু ফাংশনের প্যারামিটারে থাকে।
+
+★ফাংশনের প্যারামিটার ছাড়া অন্য যেকোন জায়গায় তিনটা 
+ডট দিয়ে কাজ করলে সেটা spread অপারেটর।
+*/
+
+//rest operator
+function sum(...anik){
+ return anik.reduce((a,b)=>a+b)
+}
+console.log(sum(1,2,3,4,5))
+/* এখানে rest অপারেটর ব্যবহার করে অজানাসংখ্যক 
+ভেলু বাইরে থেকে প্রোভাইড করে যোগ করা হয়েছে। 
+
+
+sum এর প্যারামিটারে ... anik হলো rest অপারেটর।
+
+নোটঃ কোন ফাংশনের প্যারামিটারে একাধিক ভেলুর সাথে 
+rest operator ব্যবহার করা যাবে, তবে শর্ত হলোঃ-
+rest অপারেটরটিকে সবার শেষে দিতে হবে। 
+এভাবেঃ sub(a,b,c,...anik)
+
+*/
+
+
+
+//Spread Operator
+let a=[2,4,5,6]
+console.log(...a)// 2 4 5 6 
+/* আমি চাচ্ছি a নামক অ্যারের ভেলুগুলো অ্যারেআকারে 
+রাখব না। সিঙ্গেল নাম্বার আকারে রাখব। তাই spread
+ব্যবহার করা হয়েছে। 
+*/
+
+
+//object spread করা
+let obj={
+ 
+  a:10,
+  b:20,
+  c:30
+
+}
+
+let obj2={
+  ...obj
+}
+console.log(obj2)
+
+</script>
+</body>
+</html>

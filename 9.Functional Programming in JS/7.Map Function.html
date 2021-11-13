@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*map ব্যবহার করে কোন অ্যারের আপডেট 
+করে আরেকটি নতুন অ্যারে তৈরী*/
+var a=[1,2,3]
+var newArray=a.map(function(value){
+ return value*10
+})
+console.log(a)//পূর্বের অ্যারে
+console.log(newArray)//আপডেট অ্যারে
+
+
+
+
+//map কীভাবে কাজ করে 
+var arr=[4,5,6]
+function myArray(arr,cb){
+  var newArr=[]
+   for(var i=0;i<arr.length;i++){
+    var temp=cb(arr[i],i,arr)
+    newArr.push(temp)
+   }
+   return newArr
+}
+/*প্রথমে একটা অ্যারে(arr=[4,5,6]) নিয়েছি,
+তারপর একটি ফাংশন ক্রিয়েট করেছি আর ঐ
+ফাংশনে প্যারামিটার হিসেবে ঐ অ্যারে(arr)
+এবং একটি কলবেক ফাংশন cb নিয়েছি। 
+
+
+যেহেতু আপডেটকৃত অ্যারেটি নতুন একটি অ্যারে 
+হবে তাই, ঐ ফাংশনের ভেতর একটি empty array 
+creat করি(newArr=[])
+
+এরপর একটি ফর লুপ চালাই, লুপের ভেতর একটি
+ভেরিয়েবল নিই (var temp).ঐ ভেরিয়েবলের মধ্যে
+কলবেক ফাংশনটি(cb) দেই! cb এর মধ্যে অ্যারের 
+ভেলু(arr[i]),ইনডেক্স(i)এবং অ্যারেটি(arr) নিই।
+
+এরপর temp নামক ভেরিয়েবলটি newArr এর মধ্যে 
+পুশ করে দিই। 
+*/
+
+
+
+
+
+//squre করা
+var newResult=myArray(arr,function(value){
+ return value*value
+})
+console.log(newResult)
+/*যেহেতু নতুন অ্যারে ক্রিয়েট করবে, তাই একটি 
+ভেরিয়েবলের(newResult)মধ্যে myArray ফাংশনটি
+কল করি। myArray এর মধ্যে ঐ অ্যারেটি(arr) দিই,
+এবং কলবেক ফাংশনের জায়গায় একটি ফাংশন ক্রিয়েট
+করি, ফাংশনটির প্যারামিটার হিসেবে,(value,index,arr)
+দিতে পারি। আমি শুধু ভেলু দিয়েছি. 
+
+এরপর যে কাজ করব সেটা রিটার্ন করতে হবে। 
+আমি ভেলুগুলোর বর্গ করব। তাই,  
+return value*value দিয়েছি। 
+*/
+
+
+
+</script>
+</body>
+</html>

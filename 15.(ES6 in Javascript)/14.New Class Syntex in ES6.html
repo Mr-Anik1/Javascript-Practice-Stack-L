@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//New Class Syntex in ES6
+class Anik{
+   constructor(nam,age){
+      this.name=nam
+      this.age=age
+   }
+   
+   msg(){
+    console.log('Hello I\'m Anik & I\'m from Bangladesh.')
+   }
+}
+let a1=new Anik('Anik',17)
+console.log(a1.msg())
+/* এটা হলো class তৈরীর নতুন সিস্টেম। 
+Anik এর prototype এ msg ঢুকানো হয়েছে। 
+
+★class নেম সবসময় বড় হাতের হয় এজন্য 
+Anik লেখা হয়েছে৷ 
+*/
+
+
+
+
+
+
+//এই কোডটা ES5 এ লিখলে যেমন হতোঃ
+function anik2(nam,age){
+  this.name=nam
+  this.age=age
+}
+
+anik2.prototype.msg2=function(){
+  console.log("Hi...... ")
+}
+
+let a2=new anik2("Anik",17)
+console.log(a2.msg2())
+
+
+</script>
+</body>
+</html>

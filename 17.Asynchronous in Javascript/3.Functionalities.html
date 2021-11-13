@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Creat Delay Function 
+let delay=s=>new Promise(resolve=>setTimeout(resolve,s*1000))
+/* এখানে একটা delay Arrow function তৈরী করেছি 
+এর প্যারামিটারে s দিয়েছি, তারপর new Promise creat 
+করেছি, এর ভেতরে resolve দিয়েছি অতঃপর setTimeout 
+function এর ভেতরে resolve এবং ঐ s এর সাথে 
+1000 গুণ করেছি(সেকেন্ড হবে তাহলে)
+*/
+delay(5).then(()=>console.log('5s Hi Anik'))
+delay(3).then(()=>console.log('3s Hi Anik'))
+delay(6).then(()=>console.log('6s Hi Anik'))
+delay(2).then(()=>console.log('2s Hi Anik'))
+/* এখন delay function কল করে ভেতরে যত 
+second দিব তত সেকেন্ড পর রান হবে প্রোগ্রামটা। 
+এরপর .then দ্বারা resolve কে কনসোল করা হয়েছে। 
+*/
+
+
+//Instantly কোন প্রমিসের ভেলু তৈরী ও resolve & reject
+let p1=Promise.resolve('Test Resolve')
+p1.then(v=>console.log(v))
+
+let p2=Promise.reject('Test Reject')
+p2.catch(v=>console.log(v))
+
+
+
+//Promise.all()
+
+let a1=new Promise(resolve=>{
+  setTimeout(resolve,5000,'5s Hi a1')
+})
+let a2=new Promise(resolve=>{
+  setTimeout(resolve,2000,'2s Hi a2')
+})
+let a3=new Promise(resolve=>{
+  setTimeout(resolve,9000,'9s Hi a3')
+})
+
+let allPromise=[a1,a2,a3]
+Promise.all(allPromise)
+  .then((arr)=>{
+   console.log(arr)
+  })
+
+/* Promise.all() এর মাধ্যমে একাধিক প্রমিজকে 
+একসাথে হ্যান্ডেল করা যায়৷ অন্যসময় প্রমিজে দেখা যায় 
+যেটা আগে শেষ হয়েছে সেটা শো করে, কিন্তু promise.all()
+এ শেষ কাজটা হওয়া পর্যন্ত অপেক্ষা করে সবগুলো একসাথে 
+অ্যারে আকারে শো করবে। এক্ষেত্রে সিরিয়াল একই থাকবে। 
+//result: [5s hi a1,2s hi a2,9s hi a3]
+*/
+
+
+//Promise.race()
+let b1=new Promise(resolve=>{
+ setTimeout(resolve,11000,'Hi resolve')
+})
+
+let b2=new Promise(reject=>{
+ setTimeout(reject,10000,'Hi reject')
+})
+
+
+let b3=new Promise(resolve=>{
+ setTimeout(resolve,15000,'Hi 34 resolve')
+})
+let rejectPromise=[b1,b2,b3]
+Promise.race(rejectPromise)
+    .then((arr)=>{
+      console.log(arr)
+     })
+    .catch((e)=>{
+      console.log(e.message)
+     })
+/* Promise.race() এর কাজ হলো যার কাজ আগে 
+শেষ হবে শুধু তাকেই শো করাবে। 
+
+এখানে b2 এর কাজ আগে শেষ হয়েছে তাই hi reject 
+শো করিয়ে কাজ স্টপ করে দিছে। 
+*/
+</script>
+</body>
+</html>

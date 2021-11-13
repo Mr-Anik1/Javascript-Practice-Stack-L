@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var ab1={
+
+x:23,
+y:43,
+z:21
+
+}
+
+ab2={
+
+x:23,
+y:43,
+z:21
+
+}
+
+//compares two object
+console.log(JSON.stringify(ab1)===JSON.stringify(ab2))
+/*JSON.stringify() এর মাধ্যমে অবজেক্ট 
+এর মধ্যে কম্পেয়ার করা যায়*/
+
+
+
+
+
+
+//condition 
+if(ab1.x===ab2.x && ab1.y===ab2.y && ab1.z===ab2.z){
+console.log(true)
+}
+else
+{
+console.log(false)
+} 
+/*এই নিয়মে কন্ডিশনের মাধ্যমে
+অবজেক্ট এর মধ্যে কম্পেয়ার করা হয়।*/
+
+</script>
+
+</body>
+</html>

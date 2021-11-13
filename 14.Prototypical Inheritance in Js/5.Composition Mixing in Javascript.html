@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+/*Composition mixing 
+এর মাধ্যমে Inheritance এর কাজটাই করা হয়, 
+তবে inheritance কে 2 এর অধিক level করতে
+গেলে সমস্যা হয়। আর এখানেই composition mixing
+কাজ করে।  
+*/
+function mix(target,...source){
+  Object.assign(target.prototype,...source)
+}
+/* এখানে একটি ফাংশন তৈরী করেছি যেখানে,
+parameter হিসেবে target ও ...source দিয়েছি।
+এখানে (...source) হলো ES6 এর একটি সিস্টেম। 
+এর মাধ্যমে এখানে একাধিক সোর্স বসানো যাবে৷ 
+*/
+
+var walk=function(){
+  console.log('Walking')
+}
+
+var eat=function(){
+  console.log('Eating')
+}
+
+var swim=function(){
+  console.log('Swiming')
+}
+
+
+
+//একটি ব্যাক্তি
+function person(nam){
+  this.name=nam
+}
+mix(person,walk,eat)
+/* উপরের mix function কে কল করেছি, 
+এবং target হিসেবে person দিয়েছি। 
+আর source এর জায়গায় person কি কি করতে
+পারে সেটা দিয়েছি। 
+অর্থাৎ, সোর্স এর জায়গায় walk & eat দিয়েছি।
+*/
+var p1=new person('Anik')
+console.log(p1)
+
+
+
+//মাছের ক্ষেত্রে 
+function fish(nam){
+ this.name=nam
+}
+mix(fish,eat,swim)
+/* উপরের mix function কে কল করেছি, 
+এবং target হিসেবে fish দিয়েছি। 
+আর source এর জায়গায় fish কি কি করতে
+পারে সেটা দিয়েছি। 
+অর্থাৎ, সোর্স এর জায়গায় eat & swim দিয়েছি।
+*/
+
+
+/* লক্ষণীয় বিষয়ঃ-
+
+★person ও fish উভয়েই খাবার খায়, 
+অর্থাৎ eat অবজেক্ট দিতে হবে 
+উভয়ের ক্ষেত্রে। 
+
+★person হাটতে পারে, তাই walk object. 
+
+★fish সাতার কাটতে পারে তাই swim object.
+
+
+Inheritance এর মাধ্যমে কাজটা করতে কঠিন হতো,
+কিন্তু composition mixing এর মাধ্যমে সহজেই করা 
+গেল। 
+*/
+
+var f2=new fish("Katla")
+console.log(f2)
+
+
+
+
+
+
+</script>
+</body>
+</html>

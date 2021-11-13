@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//generator
+let obj={
+  start:1,
+  end:10,
+  [Symbol.iterator]: function*(){
+    currentValue=this.start
+    while(currentValue<=this.end){
+      yield currentValue++
+    }
+  }
+}
+let it=obj[Symbol.iterator]()
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+console.log(it.next())
+
+
+
+
+//generator
+let arr=[1,2,3,4]
+function* gene(ar){
+  for(let i=0;i<ar.length;i++){
+    yield ar[i]
+  }
+}
+/* function এর পর একটা * (স্টার) দিলেই 
+সেটা জেনারেটর হয়ে যায়। 
+*/
+let itt=gene(arr)
+console.log(itt.next())
+console.log(itt.next())
+console.log(itt.next())
+console.log(itt.next())
+console.log(itt.next())
+console.log(itt.next())
+
+
+
+</script>
+</body>
+</html>

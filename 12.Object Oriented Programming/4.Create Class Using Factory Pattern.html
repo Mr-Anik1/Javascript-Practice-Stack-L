@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Create Class Using Factory Pattern 
+var myFactory=function(wid,hei){
+return{
+  width:wid,
+  height:hei,
+  hello:function(){
+  console.log("My Width is:" + this.width)
+  console.log("My Height is:" + this.height)
+  }
+ }
+}
+var result1=myFactory(5,7)
+result1.hello()
+
+var result2=myFactory(100,450)
+result2.hello()
+
+/*এখানে factory pattern এর মাধ্যমে ক্লাস 
+ক্রিয়েট করা হয়েছে।এর মাধ্যমে হাজার হাজার 
+ভিন্ন ভেলু ব্যবহার করা যাবে একটি কোড দিয়ে।
+
+
+প্রথমে একটি ভেরিয়েবল নিয়ে তার মধ্যে একটি
+ফাংশন ক্রিয়েট করা হয়েছে। ফাংশনের প্যারামিটারে 
+wid,hei দেওয়া হয়েছে। যেহেতু একটি 
+অবজেক্ট ক্রিয়েট করব তাই এখন রিটার্ন ব্যবহার 
+করে তার মধ্যে সকল প্রোপার্টি আর মেথড রাখা হয়েছে। 
+
+
+প্রোপার্টি width:wid এবং height:hei দেওয়া হয়েছে।
+যা ফাংশনের প্যারামিটারে(wid,hei) দেওয়া হয়েছিল।
+এরপর hello নামক মেথড ক্রিয়েট করা হয়েছে, আর
+এর মধ্যেই কনসোল লগ করা হয়েছে। 
+
+
+পরবর্তীতে result1 নামক ভেরিয়েবলের মধ্যে myFactory 
+কল করা হয়েছে এবং এর মধ্যে wid,hei এর ভেলু দেওয়া
+হয়েছে। তারপর result1 এর পর ডট দিয়ে hello 
+মেথড কল করা হয়েছে। result1.hello()
+কারণ hello মেথডেই কনসোল লগ করা হয়েছিল। 
+
+
+এরপর ইচ্ছা মতো হাজারো ভিন্ন ভিন্ন ভেলু ব্যবহার করা যাবে 
+এই সিস্টেমে কেবলমাত্র একটি কোড ব্যবহার করে।
+         
+
+*/
+
+
+
+</script>
+</body>
+</html>

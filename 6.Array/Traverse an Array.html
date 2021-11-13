@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*Traverse an Array
+এটার মানে হলো কোন অ্যারেতে 
+প্রত্যেকটি ভ্যেলুকে টাচ করা 
+*/
+
+
+
+//Array এর সবগুলো ভ্যেলু শো করানো
+var a=[2, 4, 5, 7, 8]
+for(var i=0;i<a.length;i++){
+console.log(a[i])
+}
+/* Array এর ইনডেক্স, এর length 
+থেকে ১ কম থাকে। 
+তাহলে কোন Array এর সর্বশেষ 
+index=length-1
+
+for(var i=0;i<=a.length-1;i++)
+এভাবে লিখলেও হতো।
+
+*/
+
+
+
+
+//Array এর প্রত্যেকটি ভ্যেলুর মান বাড়ানো
+for(var i=0;i<a.length;i++){
+a[i]+=5
+}
+console.log(a)
+/* পূর্বে a অ্যারের মান ছিলঃ
+a=[2,4,5,7,8]
+এখন 5 করে মান বাড়ানোতে এর মান হয়েছেঃ
+a=[7,9,10,12,13]
+*/
+
+
+
+
+
+//Array এর সবগুলো ভ্যেলু যোগ করা
+var b=[1,4,8,5,43,20,67]
+
+var sum=0
+for(var i=0;i<b.length;i++){
+sum+=b[i]
+}
+console.log(sum)
+
+
+
+// জোড় সংখ্যা প্রিন্ট করা
+var b=[1,4,8,5,43,20,67]
+for(var i=0;i<b.length;i++){
+if(b[i]%2==0){
+console.log(b[i])
+}
+}
+/*
+b[i]=array এর যেকোন ভ্যেলু
+b[2]=8
+কারণ এই অ্যারের 2 নং ইনডেক্সে 8 আছে
+*/
+
+
+
+//বিজোড় সংখ্যাগুলোর যোগফল
+var b=[1,4,8,5,43,20,67]
+
+var sum=0
+for(var i=0;i<b.length;i++){
+ if(b[i]%2==1){
+ sum+=b[i]
+ }
+}
+console.log(sum)
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

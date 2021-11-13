@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div id="hi">
+<h3> </h3><br><br><br><br><br>
+
+
+<div id="myDiv">
+<h1 id="goh1">I Love Bangladesh </h1>
+
+
+
+<ul id="list">
+
+ <li id="go">Anik</li>
+ <li>Manik</li>
+ <li>Tonik</li>
+ <li>Good</li>
+ <li>Bad</li>
+ <li>Bonik</li>
+ 
+</ul>
+
+
+
+<marquee ><font color="#00FF00">Hey I'm Mr.Anik</font></marquee>
+</div><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+<script type="text/javascript">
+
+
+
+//DOM Element Update করা
+let myList=list.firstElementChild
+
+setTimeout(()=>{
+  myList.innerHTML= ' Anik is a programmer'
+},7000)
+/* এখানে myList নামক ভেরিয়েবলের মধ্যে ul এর 
+প্রথম চাইল্ডটিকে স্টোর করেছি[list হলো ul এর id]
+
+
+পরে setTimeout ফাংশনের মধ্যে myList.innerHTML 
+সমান Anik is a programmer দিয়েছি
+৭ সেকেন্ড পরে  one আপডেট হয়ে  Anik is a programmer 
+শো করবে।
+*/
+
+
+
+//Element Remove করা
+setTimeout(()=>{
+ list.lastElementChild.remove()
+},5000)
+/* এখানে ৫ সেকেন্ড পর lastElementChild টি
+রিমুভ করেছি।
+
+তাই ৫ সেকেন্ড পর লাস্ট ইলিমেন্ট Bonik রিমুভ 
+হয়ে যাবে। 
+*/
+
+
+
+//Background Change করা
+setTimeout(()=>{
+ list.style.background="blue"
+ list.style.color="#00FFFF"
+},2000)
+/* এখানে ২ সেকেন্ড পরে background চেঞ্জ
+করে blue করা হয়েছে এবং ফন্ট কালার 
+#00FFFF করা হয়েছে। 
+*/
+
+
+
+//প্রথম child এর background & font color change করা
+setTimeout(()=>{
+ myList.style.background="yellow"
+ myList.style.color="red"
+},9000)
+
+
+
+
+//heading এর ফন্ট চেঞ্জ করা
+setTimeout(()=>{
+  goh1.style.color="#66FF33"
+},3000)
+
+
+//ছোট div এর background চেঞ্জ করা
+setTimeout(()=>{
+ myDiv.style.background="#000066"
+},4000)
+
+
+
+//বড় div এর background change করা
+setTimeout(()=>{
+ hi.style.background="black"
+},10000)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+
+.btn1{
+  background:blue;
+  color:white;
+  height:35px;
+  width:70px;
+  border:3px solid yellow;
+}
+
+.box{
+  background:yellow;
+  color:red;
+  height:100px;
+}
+
+</style>
+</head>
+<body>
+
+<button class="btn1" id="btn">Click Me</button>
+
+<div class="box" id="box1">
+<p>(<span id="x-value">0</span>,<span id="y-value">0</span>)</p>
+</div>
+
+
+<ul id="list">
+   <li>Anik</li>
+   <li>Manik</li>
+   <li>Tonik</li>
+</ul>
+
+
+<button class="btn1" id="myBtn2">Create</button>
+
+<script type="text/javascript">
+
+
+//Event in DOM
+
+let btn=document.getElementById("btn")
+btn.addEventListener('click',function(){
+  alert("I have Clicked")
+})
+/* এখানে btn নামক ভেরিয়েবলের মধ্যে button এর 
+id টিকে সিলেক্ট করেছি। 
+
+btn ডট(.) addEventListener() এর প্রথম অংশে 
+'click' এবং পরবর্তী অংশে একটি ফাংশন ক্রিয়েট করেছি,
+এবং এর ভেতরে একটি এলার্ট ম্যাসেজ দিয়েছি। যখনই 
+বাটনটিতে ক্লিক করা হবে তখনই alert message টি শো 
+করবে। 
+
+
+★addEventListener এর প্রথম অংশে কি Event ঘটাবো 
+সেটা দিতে হবে।[যেমনঃ click, mousemove ইত্যাদি ]
+
+★addEventListener এর পরবর্তী অংশে কোন ম্যাসেজ 
+দিব সেটা ফাংশনের মধ্যে থাকবে! 
+*/
+
+
+
+
+
+
+let box=document.getElementById('box1')
+box.addEventListener('mousemove',function(e){
+   document.getElementById('x-vlaue').innerHTML=e.clientX
+   document.getElementById('y-vlaue').innerHTML=e.clientY
+})
+
+/*
+ এখানে myBox নামক ভেরিয়েবলের মধ্যে div এর  
+id="box" সিলেক্ট করেছি। 
+
+এরপর myBox.addEventListener() এর প্রথম অংশে 
+'mousemove' Event দিয়েছি, আর পরের অংশে একটি 
+ফাংশন ক্রিয়েট করেছি এবং প্যারামিটারে e দিয়েছি। 
+
+
+এখন ঐ ফাংশনের ভেতরে 'x-value' id টি সিলেক্ট করেছি,
+এবং এর innerHTML = e.clientX দিয়েছি (যা x এর স্থানাঙ্ক 
+প্রকাশ করে।)
+আবার ঐ ফাংশনের ভেতরে 'y-value' id টি সিলেক্ট করেছি,
+এবং এর innerHTML = e.clientY দিয়েছি (যা y এর স্থানাঙ্ক 
+প্রকাশ করে।)
+এখন মাউসটা মুভ করলে প্রতিনিয়ত (x,y) স্থানাঙ্ক শো করবে। 
+
+
+★ আমরা clientX এর জায়গায় offsetX 
+   এবং  clientY এর জায়গায়  offsetY 
+   ব্যবহার করতে পারি! 
+                  ★
+*/
+
+
+
+
+
+//New Li create 
+let myList=document.getElementById('list')
+let myBtn=document.getElementById('myBtn2')
+
+myBtn.addEventListener('click',function(e){
+   let item=myList.lastElementChild.cloneNode(true)
+   item.innerHTML="Newly Created List"
+   myList.appendChild(item)
+})
+
+/* এখানে myList নামক ভেরিয়েবলের মধ্যে ul এর 
+id="list" কে সিলেক্ট করেছি। আর myBtn নামক 
+ভেরিয়েবলের মধ্যে দ্বিতীয় বাটনটির id="myBtn2" কে
+সিলেক্ট করেছি। 
+
+
+myBtn ডট(.) addEventListener() এর প্রথম অংশে 
+'click' এবং পরবর্তী অংশে একটি ফাংশন ক্রিয়েট করেছি,
+function টির ভেতরে item নামক ভেরিয়েবলের মধ্যে 
+myList এর লাস্ট চাইল্ডের ক্লোন নোড স্টোর করেছি। 
+
+তারপর item এর innerHTML = "Newly Created List"
+দিয়েছি, অতঃপর myList এর appendChild এ item টি রেখেছি 
+
+
+এখন যতবার create  button এ ক্লিক করা হবে, ততবার 
+নতুন লিস্ট ক্রিয়েট হবে। 
+
+*/
+
+
+</script>
+</body>
+</html>

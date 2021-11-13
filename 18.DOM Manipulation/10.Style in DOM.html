@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<ul id="list">
+
+ <li id="go">Anik</li>
+ <li>Manik</li>
+ <li>Tonik</li>
+ <li>Good</li>
+ <li>Bad</li>
+ <li>Bonik</li>
+ 
+</ul>
+
+<script type="text/javascript">
+
+//Style in DOM
+let myList=document.getElementById("list")
+
+let styleObj={
+  color:"red",
+  background:"black"
+}
+
+;[...myList.children].forEach(li=>Object.assign(li.style,styleObj))
+Object.assign(li.style,styleObj)
+
+
+/* ul এর style চেঞ্জ করা হয়েছে। তাই প্রথমে 
+myList নামক ভেরিয়েবলের মধ্যে ul এর id টিকে সিলেক্ট
+করেছি। 
+
+আমি যেসব স্টাইল চেঞ্জ করব সেগুলো styleObj 
+নামক অবজেক্টের মধ্যে রেখেছি। 
+ 
+ 
+এরপর একটা সেমিকোলন(;) দিয়ে শুরু করতে হবে নাহলে 
+কাজ করবে না। এরপর spred এর মাধ্যমে myList কে 
+অ্যারেতে রূপান্তর করলাম। তারপর এর মধ্যে forEach() 
+লুপ চালালাম।
+ 
+ 
+Arrow ফাংশনের প্যারামিটারে li দিয়েছি, 
+তারপর Object.assign এর মধ্যে যেটার স্টাইল পরিবর্তন 
+করব সেটা ডট স্টাইল দিয়েছি(li.style), তারপর কমা 
+দিয়ে আমাদের তৈরীকৃত অবজেক্টটা(styleObj) দিয়ছি। 
+
+তারপর Object.assign(li.style,styleObj)
+করেছি। 
+*/
+
+
+</script>
+</body>
+</html>

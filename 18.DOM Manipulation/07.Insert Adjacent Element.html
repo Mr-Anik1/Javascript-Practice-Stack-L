@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="red">
+
+
+<ul id="go">
+  <li>Anik</li>
+  <li>Manik</li>
+  <li>Tonik</li>
+</ul>
+</div>
+
+<script type="text/javascript">
+//intertAdjasentElement
+
+function hi(tagName,className,innerHTML){
+   let myTag=document.createElement(tagName)
+   myTag.className=className || ''
+   myTag.innerHTML=innerHTML || ''
+   return myTag
+}
+
+function appends(parent,children){
+  children.forEach(child=>parent.appendChild(child))
+}
+
+
+let p1=hi('p','','Hey I\'m Mr.Anik & I\'m from Bangladesh. If you Want to know What about Mr.Anik you Search on Google')
+let div1=hi('div')
+appends(div1,[p1])
+
+//beforeBegin
+go.insertAdjacentElement('beforeBegin',div1)
+/* beforeBegin এর মানে হলো শুরু হওয়ার ঠিক 
+পূর্বে এটা শো করবে।
+
+যেমন এখানে আমাদের তৈরী করা div টা ul ট্যাগের 
+ঠিক পূর্বে শো করেছে। 
+*/
+
+
+/*
+ঠিক একইভাবে কাজ করে এরকম হলোঃ-
+★ go.insertAdjacentElement('beforeEnd',div1)
+beforeEnd এটার কাজ হলো শেষ হওয়ার ঠিক 
+পূর্বে এটা শো করবে। 
+
+
+
+★go.insertAdjacentElement('afterBegin',div1)
+afterBegin এটার কাজ হলো শুরু হওয়ার ঠিক পরে 
+এটা শো করবে। 
+
+
+★go.insertAdjacentElement('afterEnd',div1)
+afterEnd এটার কাজ হলো শেষ হওয়ার ঠিক পরে 
+এটা শো করবে । 
+*/
+
+</script>
+</body>
+</html>

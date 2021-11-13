@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Method Overriding 
+function extend(child,parent){
+  child.prototype=Object.create(parent.prototype)
+}
+
+
+
+function shape(col){
+  this.color=col
+}
+shape.prototype.common=function(){
+ console.log("Hello I'm common")
+}
+
+
+
+
+
+function square(wid,col){
+  shape.call(this,col)
+  this.width=wid
+}
+extend(square,shape)
+var s1=new square(20,"red")
+console.log(s1.common())//hello I'm common
+
+
+
+
+
+
+
+square.prototype.common=function(){
+ console.log("Hi Anik")
+}
+var s2=new square(40,"white")
+console.log(s2.common())//hi anik
+/* যদি common method কে আপডেট করতে হয় 
+তাহলেঃ-
+
+আমি square এর প্রোটোটাইপে common পরিবর্তন করব
+তাই square.prototype.common দিয়ে একটি ফাংশন
+ক্রিয়েট করেছি এবং এর মধ্যে আপডেটকৃত বিষয় কনসোল
+লগ করেছি।অর্থাৎ পূর্বে যে common method ছিল সেটাকে
+override করে, নতুন common এর বিষয়বস্তু বসিয়েছি।
+
+
+রেজাল্ট hi anik শো করেছে।
+*/
+
+
+
+function circle(wid,col){
+  shape.call(this,col)
+  this.width=wid
+}
+extend(circle,shape)
+var c1=new circle(20,"red")
+console.log(c1.common())//hello i'm common
+/*
+এখন  circle এ common() কল করা হলে সেটা আপডেটকৃত
+বিষয়টি শো করবে না। এখানে c1.common() কল করা
+হয়েছে, আর রেজাল্ট পুরাতন common (hello I'm common)
+শো করেছে। 
+*/
+
+
+
+
+
+//parent class method যদি কল করা লাগে
+circle.prototype.common=function(){
+  shape.prototype.common.call(this)//parant
+  console.log("I'm Circle")
+}
+var c2=new circle(50,"blue")
+console.log(c2.common())
+/* এখানে আপডেটকৃত বিষয়ের পাশাপাশি parent 
+এর method কে শো করানো হয়েছে। 
+
+shape.prototype.common.call(this) এর 
+মাধ্যমে parent অর্থাৎ shape এর method 
+কল করা হয়েছে। 
+
+তাই c2.common call করায় রেজাল্টে:-
+parent method = hello i'm commom এবং 
+update method = I'm circle 
+এই দুটোই শো হয়েছে! 
+*/
+
+</script>
+</body>
+</html>

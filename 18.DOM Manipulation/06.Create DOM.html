@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<div class="container" id="cont">
+
+<h1>I Love Bangladesh </h1>
+
+<ul id="list" >
+ <li>Anik</li>
+ <li>Manik</li>
+ <li>Tonik</li>
+</ul>
+
+</div>
+
+
+
+<script type="text/javascript">
+//Create DOM
+
+function creatElements(tagName,className,innerHTML){
+   let tag=document.createElement(tagName)
+   tag.className=className ||''
+   tag.innerHTML=innerHTML || ''
+   return tag
+}
+/* এখানে creatElements নামক একটি ফাংশন 
+ক্রিয়েট করেছি এবং এর প্যারামিটারে tagName,ClassName,
+এবং innerHTML দিয়েছি। 
+
+এখানে, tagName = যেকোন ট্যাগ('p'...)
+      className = ইচ্চামতো একটি ক্লাস নেম দেওয়া
+      innerHTML = বর্ণনা 
+
+*/
+
+function appends(parent,children){
+  children.forEach(child=>parent.appendChild(child))
+}
+/* এখানে appends নামক একটি ফাংশন ক্রিয়েট করেছি এবং
+এর প্যারামিটারে parent এবং children দিয়েছি। পরে 
+children এ forEach loop চালিয়েছি। এর প্যারামিটারে 
+child দিয়েছি(Arrow Function), তারপর parent এর
+appendChild এর মধ্যে ঐ child রেখেছি। 
+*/
+
+
+
+let li=creatElements('li',"",'Hi Anik I\'m your girl')
+let list=document.getElementById('list')
+list.appendChild(li)
+
+
+
+let p1=creatElements('p',"",'Go to dhaka to the Bangladesh vhf sgsf fig GDP hgh ugc thug ggt VAT vfyy India FGDs BHF cs GDP fs')
+/* এখানে p1 নামক ভেরিয়েবলের মধ্যে creatElements নামক 
+ফাংশন কল করেছি, tagName = 'p' দিয়েছি
+               className = '' ফাকা রেখেছি
+               innerHTML = বর্ণনা করেছি
+
+*/
+
+
+
+
+let p2=creatElements('p',"",'Go to dhaka to the Bangladesh vhf sgsf fig GDP hgh ugc thug ggt VAT vfyy India FGDs BHF cs GDP fs')
+let div1=creatElements('div')
+/* একইভাবে p2 ও div1 নামক ভেরিয়েবলের মধ্যে
+creatElements ফাংশন কল করে  প্রয়োজনীয় কাজ করেছি।
+*/
+
+
+
+appends(div1,[p1,p2])
+/* appends ফাংশনটি কল করেছি, এখানে parent 
+হিসেবে div এবং children হিসেবে [p1,p2] দিয়েছি।
+*/
+
+
+
+
+let control=document.getElementById('cont')
+control.appendChild(div1)
+/* এখানে control নামক ভেরিয়েবলের মধ্যে 
+'cont' নামক id টি document.getElementById()
+দ্বারা সিলেক্ট করেছি! 
+
+তারপর control এর appendChild এ div1 দিয়েছি। 
+*/
+
+
+</script>
+</body>
+</html>

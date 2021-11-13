@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+/* gretter & setter */
+
+var hi=function(a,b){
+  this.base=a
+  this.height=b
+  
+  var ob={
+   x:20,
+   y:-5
+  }
+  
+  var possition=function(){
+   console.log("X= " + ob.x + " Y= " + ob.y)
+   console.log("Result is = " + this.base*this.height)
+  }.bind(this)
+  
+  this.say=function(){
+   possition()
+  }
+  
+  Object.defineProperty(this, "ob", {
+   get:function(){
+   return ob
+   },
+   
+   set:function(value){
+   ob=value
+   }
+  })
+
+
+}
+var result1=new hi(5,4)
+result1.say()
+
+result1.ob={
+ x:1233,        //ob এর মান চেঞ্জ করলাম 
+ y:-789
+}
+console.log(result1.ob)
+
+
+
+
+
+</script>
+</body>
+</html>

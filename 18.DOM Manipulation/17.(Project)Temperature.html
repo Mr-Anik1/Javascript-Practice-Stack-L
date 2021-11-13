@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<style type="text/css">
+body{
+  background:black;
+  color:white;
+}
+.far{
+  padding-top:40px;
+  padding-bottom:25px;
+  padding-left:11px;
+  padding-right:11px;
+  border:2px solid blue;
+}
+
+.y{color:yellow;}
+
+.ink{
+  background:#7FFF00;
+  color:#800080;
+  border:2px solid #00FFFF;
+  border-radius:5px;
+  height:20px;
+}
+
+.b{
+  background:#9400D3;
+  color:white;
+  border:3px solid yellow;
+  border-radius:100px;
+  width:60px;
+  height:30px;
+  
+}
+
+.ba{
+  background:#4169E1;
+  color:white;
+  border:3px solid yellow;
+  border-radius:100px;
+  width:60px;
+  height:30px;
+}
+
+</style>
+<div class="far">
+
+
+
+Enter Temperature:<input class="ink" type="number" id="in"><br>
+<input class="b" type="button" onclick="cel()" value="C to F">
+<input class="ba" type="button" onclick="far()" value="F to C">
+<p>Celcius to Fahrenheit:<span id="cl" class="y"></span></p>
+<p>Fahrenheit to Celcius:<span id="fr" class="y"></span></p>
+
+
+
+
+
+</div>
+<script type="text/javascript">
+
+function far(){
+  let f=document.getElementById("in").value
+  document.getElementById("fr").innerHTML=(5*f-160)/9
+}
+
+function cel(){
+  let c=document.getElementById("in").value
+  document.getElementById("cl").innerHTML=(9*c+160)/5
+}
+  
+
+
+
+</script>
+</body>
+</html>

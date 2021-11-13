@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Hide private property with Symbol()
+const _name=Symbol()
+const _msg=Symbol()
+class circle{
+   constructor(nam,age){
+   this[_name]=nam
+   this.age=age
+   }
+   
+   [_msg](){
+    console.log("Hi Anik")
+   }
+}
+let c1=new circle("Anik",17)
+console.log(c1)
+/* কোন কিছু হাইড করার জন্য Symbol() ব্যবহার 
+করা যেতে পারে। যেমন এখানে আমি name এবং 
+msg কে হাইড করেছি। এজন্য উপরে 
+const _name/msg=Symbo() দিয়েছি। আর this.name
+এর পরিবর্তে this[_name] দিয়েছি, এবং msg() এর 
+পরিবর্তে [_msg]() দিয়েছি। 
+
+
+এখন c1.(ডট) দিলে msg & name শো করবে না। 
+কিন্তু age শো করবে। কারণ age কে হাইড করা হয়নি। 
+*/
+
+
+
+</script>
+</body>
+</html>

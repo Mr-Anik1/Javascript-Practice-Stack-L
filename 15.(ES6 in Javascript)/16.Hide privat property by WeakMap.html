@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Hide privat property by WeakMap()
+const _name=new WeakMap()
+const _age=new WeakMap()
+const _funk=new WeakMap()
+
+class circle{
+  constructor(nam,age){
+  this.size=100
+  _name.set(this,nam)
+  _age.set(this,age)
+  _funk.set(this,()=>{
+    console.log(this.size)
+  })
+    
+  }
+  
+  draw(){
+   console.log(_name.get(this),_age.get(this))
+   _funk.get(this)()
+  }
+}
+
+let c1=new circle("Anik",17)
+console.log(c1.draw())
+
+/* এখানে name,age এবং funk কে প্রাইভেট করা হয়েছে। 
+এজন্য উপরে const _name/_age/_funk=new WeakMap() 
+নেওয়া হয়েছে। 
+
+আগে প্রোপার্টি নিতাম এভাবেঃ this.name=nam কিন্তু 
+WeakMap() দিয়ে প্রোপার্টি হাইড/প্রাইভেট করার জন্য 
+_name.set(this,nam) এভাবে নিতে হয়।
+
+এখানে _funk.set(this,এখানে একটি ফাংশন নিয়েছি 
+তবে সেটা Arrow function. কারণ সাধারণভাবে 
+function() নিলে সেটা কাজ করত না। 
+
+তারপর draw() মেথডের ভিতরে name,age,funk 
+কল করেছি। 
+
+
+
+এখন বাইরে থেকে c1.(ডট) দিলে name,age & funk 
+সাজেশনে আসবে না। কারণ এগুলো প্রাইভেট বা হাইড
+করা হয়েছে।তবে draw() আসবে কারণ এটা হাইড করা 
+হয়নি৷ 
+*/
+
+
+</script>
+</body>
+</html>

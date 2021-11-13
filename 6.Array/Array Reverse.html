@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Array reverse 
+var a=[1,2,3,4,5,6,7,8]
+console.log(a.reverse())
+/*Reverse মানে হলো উল্টানো,
+এই অ্যারেটা [1,2,3,5,6,7,8] এরকম ছিল, 
+Reverse করার কারণে সেটা উল্টিয়ে 
+হয়ে গেছে এরকম [8,7,6,5,4,3,2,1]*/
+
+
+//logic দিয়ে reverse করা
+var b=[4,5,6,7,8,9,10]
+for(var i=0;i<(b.length/2);i++){
+var temp=b[i]
+b[i]=b[b.length-1-i]
+b[b.length-1-i]=temp
+
+}
+console.log(b)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//তিনটি সংখ্যার মধ্যে বড় সংখ্যা নির্ণয়
+
+
+var a=5
+var b=4.9
+var c=9
+
+if(a>b && a>c){
+  console.log('A is Large')
+}
+else if(b>a && b>c){
+  console.log('B is Large')
+}
+else if(c>a && c>b){
+  console.log('C is Large')
+}
+else if(a,b,c==0){
+  console.log('Same')
+}
+
+
+
+//AND operator &&
+var a=10
+var b=8
+var c=23
+var d=27
+
+if(a>b && c>d){
+  console.log('A is greater than B & C is greater than D')
+}
+else{
+  console.log('Condition is false')
+}
+//এখানে একটি কনডিশন মিথ্যা
+
+
+/*AND operator এ দুইটি কনডিশন সত্য হলে 
+রেজাল্ট সত্য হবে(শো করবে) এবং অন্যথায় 
+মিথ্যা হবে(শো করবে না)
+
+a----b ==== Result 
+1----1 ==== 1
+1----0 ==== 0
+0----1 ==== 0
+0----0 ==== 0
+
+
+এখানে 1=True এবং 0=False 
+*/
+
+var a=20
+var b=10
+var c=30
+var d=25
+
+if(a>b && c>d){
+  console.log( a + ' is greater than ' 
+   + b +' and ' + c + ' is greater than ' + d)
+}
+else{
+  console.log('Condition is false')
+}
+
+//এখানে ২ টা কনডিশনই সত্য তাই রেজাল্ট সত্য
+
+
+
+
+//OR Operator ||
+var a=20
+var b=10
+var c=3
+var d=19
+
+if(a>b || c>d){
+  console.log('Result True')
+}
+else{
+  console.log('Result False')
+}
+
+/*এখানে একটি কনডিশন সত্য অপরটি মিথ্যা
+তাই Result True
+
+OR Operator এ একটা সত্য হলে রেজাল্ট সত্য!
+আর ২ টি কনডিশন মিথ্যা হলে রেজাল্ট মিথ্যা।
+
+a----b ==== Result 
+1----1 ==== 1
+1----0 ==== 1
+0----1 ==== 1
+0----0 ==== 0
+
+এখানে 1=True & 0=False
+
+*/
+  
+a=2
+b=10
+c=3
+d=20
+if(a>b || c>d){
+  console.log('Result True')
+}
+else{
+ console.log('Result False')
+}
+
+/*এখানে ২ টা কনডিশনই মিথ্যা তাই 
+Result False*/
+  
+  
+  
+
+//Not Operator ! বিপরীত
+
+var a=10
+var b=15
+var cheak=(a>b)
+console.log(cheak)
+//Result False হয়েছে 
+
+var cheak=!(a>b)
+console.log(cheak)
+/*মিথ্যা কনডিশনের সামনে নট(!)
+ব্যবহার করায় রেজাল্ট true হয়েছে*/
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

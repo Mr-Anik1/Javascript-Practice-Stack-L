@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+//Callback Function 
+function hello(a,b,cb){
+var c=a+b
+var d=a-b
+var result=cb(c,d)
+return result 
+}
+/*এখানে cb এর মধ্যে c,d রেখেছি,
+এখানে cb হলো callback Function
+*/
+
+//যোগ
+var sum=hello(7,3,function(c,d){
+return c+d
+})
+console.log(sum)
+/*এখানে প্রথমে আমরা মেইন ফাংশন
+hello() কল করেছি।এর মধ্যে a,b,এবং 
+যোগ করার জন্য আমরা একটি ফাংশন তৈরী
+করেছি,(We creat a function as need)
+সেটা রেখেছি। পরে sum কনসোল করেছি!
+
+এই অন্যোনিমাস ফাংশনের মধ্যে callback 
+function এ যেসব ভেরিয়েবল ব্যবহার করা
+হয়েছে সেসব ভেরিয়েবলই ব্যবহার করতে হবে।
+
+
+যেমন callback ফাংশন cb(c,d) তে c,d 
+ভেরিয়েবল নিয়েছি, তাই পরবর্তী অ্যানোনিমাস
+ফাংশনেও function(c,b) c,b নিতে হবে। 
+*/
+
+
+//বিয়োগ
+var sub=hello(7,3,function(c,d){
+return c-d
+})
+console.log(sub)
+
+
+//গুণ
+var mul=hello(7,3,function(c,d){
+return c*d
+})
+console.log(mul)
+
+
+//ভাগ
+var div=hello(7,3,function(c,d){
+return c/d
+})
+console.log(div)
+
+
+</script>
+</body>
+</html>

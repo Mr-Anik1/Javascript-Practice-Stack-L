@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Method Overriding in ES6
+class Anik{
+   msg(){
+    console.log('Hello I\'m Anik')
+   }
+}
+
+class Person extends Anik{
+  constructor(nam,age){
+  super()
+  this.name=nam
+  this.age=age
+  }
+  
+  msg1(){
+   console.log(`My name is ${this.name}, and I am ${this.age} years old`)
+  }
+  
+  msg(){
+   console.log('Hey who are you')//msg কে Overriding করলাম
+  }
+  
+}
+
+let p1=new Person('Anik',17)
+console.log(p1.msg1())
+
+console.log(p1.msg())//hey who are you(নতুনটা) 
+
+
+
+/* Anik class এর msg() মেথডকে overriding 
+করা হয়েছে। 
+
+ES6 এ overriding একদম সিম্পল। 
+যেটাকে overriding করব সেটা আপডেট করলেই 
+হয়ে গেল৷ যেমন এখানে msg() কে overriding 
+করার জন্য Person এর constructor এর ভেতরে 
+আবার msg() মেথডটি নিয়ে নতুন কিছু লিখেছি। 
+জাস্ট এনাফ!
+
+
+এখন p1.msg() কে কনসোল লগ করলে সেটা 
+আপডেটকৃত msg()কে দেখাবে। 
+*/
+
+
+
+
+class Circle extends Anik{
+  constructor(wid,hei){
+  super()
+  this.width=wid
+  this.height=hei
+  }
+}
+let c1=new Circle(2,3)
+console.log(c1.msg())//hello I'm Anik(আগেরটাই)
+
+
+/* Person class এ msg() কে overriding করা 
+হয়েছে তাই শুদু person এ এটা কাজ করবে। 
+
+★
+Circle এ msg() কে overriding করা হয়নি তাই, 
+c1.msg() কনসোল করলে আগের ম্যাসেজটা
+hello I'm Anik শো করছে।
+★ 
+*/
+
+</script>
+</body>
+</html>

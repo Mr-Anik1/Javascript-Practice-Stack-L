@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Array Literal
+var a=[7,21,32,44,52]
+console.log(a)
+
+/*উপরের অ্যারের length 5.
+আর ইনডেক্স 4. 
+index:
+ 7=0
+21=1
+32=2
+44=3
+52=4
+*/
+
+
+
+//নতুন কিছু যোগ করা
+a[5]=234
+console.log(a)
+/*উপরের অ্যারের সর্বোচ্চ ইনডেক্স ছিল 4.
+এখন 5 নং ইনডেক্সে নতুন কিছু যোগ করার 
+নিয়ম হলো arr[5]=something*/
+
+
+
+
+
+//Array Update
+a[2]=12334
+console.log(a)
+/*
+আবার 2 নং ইনডেক্স এ কিছু আছে। 
+আমি সেটা আপডেট করতে চাই তাহলে 
+a[2]=new update
+
+2 নং index পূর্বে ছিল 32. 
+আমি নতুন সংখ্যা 12334 update করেছি। 
+এখন অ্যারের 2 নং index এ 12334 যোগ হয়েছে। */
+
+
+
+
+//কোন ইনডেক্স এ কোন নাম্বার সেটা চেক করা
+console.log(a[3])
+/*কোন ইনডেক্স এ কোন নাম্বার সেটা চেক 
+করা নিয়ম console.log(variable.[index])
+আমি 3 নং ইনডেক্স এ কী আছে সেটা দেখার
+জন্য console.log(a[3])করেছি
+*/
+
+
+
+
+//length
+console.log(a.length)
+/*5 নং index এ নিউ নম্বার যোগ 
+করার পর এর length 6 হয়েছে*/
+
+
+
+
+/*আবার 6,7,8,9 index বাদ দিয়ে এই 
+অ্যারেতে 10 নং index যোগ করব */
+a[10]=100
+console.log(a)
+/*Array টা এরকম হয়েছেঃ
+[7,21,12334,44,52,234,,,,,100]
+
+এখন অ্যারের length 11 দেখাবে
+*/
+console.log(a.length)
+
+
+
+
+/* 9 নং index এ কিছু নাই সেটা চেক করি,  */
+console.log(a[9])
+/* 9 নং index এ কিছু নাই বলে 
+undefined শো করছে।*/
+
+
+
+
+
+
+
+
+
+
+//Array constructor 
+var b=Array(1,2,3)
+console.log(b)
+
+
+</script>
+</body>
+</html>

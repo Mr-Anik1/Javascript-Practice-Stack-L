@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+body{
+ background:black;
+ color:white;
+}
+.go{
+ background:blue;
+ color:white;
+ width:70px;
+ height:35px;
+ font-size:17px;
+ border:3px solid yellow;
+}
+</style>
+</head>
+<body>
+
+
+<ul id="list">
+ <li>Hi</li>
+ <li>By</li>
+ <li>Ti</li>
+ <li>Gi</li>
+</ul>
+
+<button class="go" id="btn">Create</button>
+<script type="text/javascript">
+//Remove in DOM
+
+
+
+let myBtn=document.getElementById('btn')
+let myList=document.getElementById('list')
+
+
+myBtn.addEventListener('click',function(e){
+  let hi=myList.lastElementChild.cloneNode(true)
+  hi.innerHTML="create new"
+  myList.appendChild(hi)
+})
+
+
+
+
+
+
+
+//ক্লিক করে রিমুভ করা
+
+myList.addEventListener('click',function(e){
+  if(this.contains(e.target)){
+    e.target.remove()
+  }
+})
+/*  যেহেতু ul এর আইটেমমগুলো ক্লিক করে রিমুভ করব 
+তাই myList ডট addEventListener() দিয়ে এর ভেতরে
+click ইভেন্ট দিয়েছি আর একটি ফাংশন ক্রিয়েট  করেছি। 
+আর এর প্যারামিটারে e দিয়েছি। এরপর ফাংশনের ভেতরে 
+একটি if কন্ডিশনের মধ্যে this.contains এর মধ্যে 
+e.target দিয়েছি৷ 
+ 
+[[এর মানে হলোঃ- this দ্বারা myList কে ইঙ্গিত করেছি,
+এখন this(myList) এর contains এর ভেতরে 
+ঐ প্যারামিটারের e কে target করেছি। ]]
+
+এরপর ঐ target টিকে remove() এর মাধ্যমে রিমুভ করেছি। 
+
+
+এখন যে লিস্ট আইটেমের উপর ক্লিক করব সেটাই রিমুভ হয়ে যাবে!!
+*/
+
+</script>
+</body>
+</html>

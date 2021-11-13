@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/* currying Function মূলতঃ- একটি ফাংশনে 
+একটি argument পাস করবে, আবার ১ম ফাংশনটি
+আরেকটি ফাংশন রিটার্ন করবে, ২য় ফাংশনেও একটি
+argument পাস করবে,আবার ২য়ফাংশনটি
+আরেকটি ফাংশন রিটার্ন করবে, ৩য় ফাংশনেও একটি
+argument পাস করবে।
+*/
+
+//currying function 
+function hello(a){
+  return function(b){
+    return function(c){
+      return a+b+c
+    }
+  }
+}
+var result=hello(5)(5)(10)
+console.log(result)
+/*এখানে প্রথম hello function এর প্যারামিটার
+a,প্রথম ফাংশনটি যে ফাংশনটি(২য়) রিটার্ন করেছে তার
+প্যারামিটার b, ২য় ফাংশনটি যা(৩য়) রিটার্ন করেছে তার 
+প্যারামিটার c.এই তৃতীয় ফাংশনটি a+b+c return করেছে।
+
+
+যখন রেজাল্ট কনসোল করব তখন কিন্তু 
+hello ফাংশনের ভেতরে একবারে a,b,c দিতে 
+পারব না। কারণ hello তে কেবল a আছে।
+তাই hello এর মধ্যে a,তারপর ব্রাকেট দিয়ে b,
+তারপর আবার ব্রাকেট দিয়ে c লিখতে হবে। 
+
+
+এভাবেঃ hello(a)(b)(c)
+
+*/
+
+
+
+</script>
+</body>
+</html>

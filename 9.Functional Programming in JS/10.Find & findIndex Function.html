@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*find & findIndex ব্যবহার করে কোন 
+অ্যারেতে উক্ত ডেটাটি আছে কিনা তা বুঝা যায়।
+*/
+
+//find
+var a=[1,2,3,4,5,6,23,45,9]
+var result=a.find(function(value){
+  return value==6
+})
+console.log(result)
+/*এখানে find ব্যবহার করে দেখতে চেয়েছি 
+উপরের অ্যারেতে 6 আছে কিনা? সেজন্য 
+অ্যানোনিমাস ফাংশনের প্যারামিটারে value দিয়েছি,
+আর return করেছি value সমান 6 
+
+
+যেহেতু উপরের অ্যারেতে 6 আছে তাই রেজাল্ট 
+6 শো করেছে, না থাকলে undefined দেখাতো।
+*/
+
+
+
+
+//find এর manipulation 
+function myFind(a,cb){
+ for(var i=0;i<a.length;i++){
+  if(cb(a[i])){
+   return a[i]
+  }
+ }
+}
+/*এখানে একটি ফাংশন নিয়েছি, ফাংশনের
+প্যারামিটারে উক্ত অ্যারে(a) এবং কলব্যাক(cb)
+নিয়েছি,তারপর একটি ফর লুপ চালিয়েছি। 
+
+লুপের মধ্যে if condition নিয়েছি। 
+আর কন্ডিশনের মধ্যে ঐ কলব্যাক নিয়ে তার
+মধ্যে অ্যারের ভেলু (a[i]) রেখেছি। 
+
+পরে a[i] return করেছি। 
+*/
+
+
+var res=myFind(a,function(value){
+ return value==9
+})
+console.log(res)
+
+
+
+
+
+/*findIndex এর মাধ্যমে অ্যারেতে যে 
+ভেলুটা খুজব তার ইনডেক্স শো করবে */
+var arr=[1,2,3,4,5,6,7]
+var myResult=arr.findIndex(function(value){
+   return value==4
+})
+console.log(myResult)
+/*এখানে 4 সংখ্যাটির ইনডেক্স বের করেছি 
+তাই রেজাল্ট  3 শো করেছে। কারণ 4 
+সংখ্যাটি 3 নং ইনডেক্সে অবস্থিত। */
+
+//findIndex manipulation 
+var array=[1,2,3,4,5]
+function myFindIndex(array,cb){
+ for(var i=0;i<array.length;i++){
+  if(cb(array[i])){
+   return i
+  }
+ }
+}
+/*এখানে i রিটার্ন করেছি কারণ index নাম্বার 
+i দ্বারাই শো করে। 
+
+findIndex এ i return করতে হয়।
+*/
+
+
+var myRes=myFindIndex(array,function(value){
+   return value==3
+})
+console.log(myRes)//Ans:2
+
+
+
+</script>
+</body>
+</html>

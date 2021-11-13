@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var s=0
+function h(n){
+ if(n==1){
+ return 1
+ }
+ h(n-1)
+ if(n%2==0){
+  return s=s+n
+ }
+ 
+}
+h(11)
+console.log(s)
+
+
+
+
+//বিজোড় সংখ্যা 
+function sum(s,e)
+{
+if (s>e) return 0;
+else return s+sum(s+2,e);
+}
+console.log(sum(1,5))
+
+
+//জোড় 
+function sum(s,e)
+{
+if (s>e) return 0;
+else return s+sum(s+2,e);
+}
+console.log(sum(2,5))
+
+</script>
+</body>
+</html>

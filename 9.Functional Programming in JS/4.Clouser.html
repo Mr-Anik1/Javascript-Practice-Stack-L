@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//clouser
+var a=32
+function b(){
+var c=10
+ return function(){
+ console.log(c)
+ }
+}
+var d=b()
+console.dir(d)
+/*যদি কোন স্কোপে বাইরের কোন স্কোপ 
+থেকে ডেটা আসে তাহলে সেটা clouser
+
+এখানে b() ফাংশনের স্কোপ থেকে
+c=10 ডেটাটি অন্য একটি রিটার্ন ফাংশনের
+স্কোপে এসেছে তাই এটি ক্লোজার।
+
+*/
+
+</script>
+</body>
+</html>

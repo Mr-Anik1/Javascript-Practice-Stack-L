@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//this keyword 
+var hello={
+   
+   width:100,
+   height:50,
+   yeah:function(){
+   this.kitty()
+   },
+   kitty:function(){
+    console.log("My Height is:" + this.height)
+   }
+}
+hello.yeah()
+/*এখানে দুইটি মেথড ব্যবহার করা হয়েছে। 
+kitty method কে yeah method এ কল
+করা হয়েছে। 
+
+kitty কে কল করার সময় যদি শুধু kitty 
+লিখতাম তাহলে undefined শো করত। কারণ 
+কোন অবজেক্টের মধ্যে কিছু কল করার জন্য 
+this ব্যবহার করতে হয়। 
+
+
+তাই this.kitty() ব্যবহার করায় সঠিক 
+রেজাল্ট শো করেছে। 
+*/
+
+
+function a(){
+ console.log(this)
+}
+a()
+/*this কোন অবজেক্টের বাহিরে  দিলে 
+সেটা window object কে হাইলাইট করে।*/
+console.log(this)
+
+
+
+
+function b(){
+ hello.yeah()
+}
+b()
+/*এই ফাংশনটিতে yeah কে কল করা 
+হয়েছে।তাই my height 50 শো করেছে। 
+অবজেক্টের বাহিরে অবজেক্টের কিছু কল করার
+জন্য প্রথমে ঐ অবজেক্ট তারপর ডট দিয়ে
+অবজেক্টের প্রয়োজনীয় অংশ লিখতে হয়। 
+
+যেমন yeah কে বাহিরে কল করার জন্য yeah 
+যার মধ্যে রয়েছে প্রথমে তাকে তারপর ডট দিয়ে 
+yeah() 
+এভাবেঃ hello.yeah()
+
+
+অথচ yeah এর মধ্যে kitty কে কল করা 
+হয়েছিল।আর kitty এর মধ্যেই কনসোল লগ 
+করা আছে my height 50.
+*/
+
+/*
+this এর শর্তঃ
+
+★কোন অবজেক্টে ঐ অবজেক্টের কিছু কল করার জন্য 
+this ডট দিয়ে ঐ প্রয়োজনীয় অংশ। যেমন আমি 
+hello অবজেক্টের kitty method এ height কল
+করব, তাই লিখতে হবে this.height 
+শুধু height লিখলে undefined শো করবে। 
+
+
+★অবজেক্টের বাহিরে অবজেক্টের কিছু কল করার
+জন্য প্রথমে ঐ অবজেক্ট তারপর ডট দিয়ে
+অবজেক্টের প্রয়োজনীয় অংশ লিখতে হয়। 
+
+যেমন yeah কে বাহিরে কল করার জন্য yeah 
+যার মধ্যে রয়েছে প্রথমে তাকে তারপর ডট দিয়ে
+yeah()
+
+এভাবেঃ hello.yeah()
+
+
+★ this কোন অবজেক্টে থাকলে ঐ অবজেক্টকে 
+হাইলাইটস করে। 
+
+
+★this অবজেক্টের বাহিরে থাকলে window object
+কে হাইলাইটস করে। 
+
+*/
+
+</script>
+</body>
+</html>

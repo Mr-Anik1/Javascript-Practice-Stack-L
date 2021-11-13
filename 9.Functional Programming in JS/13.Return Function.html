@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//return function from another function 
+function greet(msg){
+  function greeting(name){
+   return msg + " " + name + " ! "
+  }
+  return greeting
+}
+
+var aa=greet("Good Night")
+var bb=greet("Good Morning")
+console.log(aa("Anik"))
+console.log(bb("Alex"))
+
+
+
+
+function power(p){
+  return function base(n){
+   var result=1
+    for(var i=0;i<p;i++){
+     result*=n
+    }
+    return result 
+  }
+}
+var res=power(10)
+console.log(res(3))
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<h1 id="title">Bangladesh</h1>
+
+
+<p class="lead">Hello Anik, I'm from Russia</p>
+<p class="lead">Bangladeshi Scientists</p>
+
+
+
+
+<ul>
+ <li name="list-item-one">Anik</li>
+ <li name="list-item-two">Manik</li>
+</ul>
+
+
+
+
+
+<script type="text/javascript">
+/* querySelector() & querySelectorAll()
+এর মাধ্যমে যেকোন Element select করা যায় খুব
+সহজে। 
+
+একটি Element select করার ক্ষেত্রে querySelector()
+এবং একাধিক Element Select করার ক্ষেত্রে 
+querySelectorAll() ব্যবহার করা হয়।
+*/
+
+
+let idSelect=document.querySelector('#title')
+console.log(idSelect)
+/* css  এ আমরা আইডি select করি # চিহ্ন বসিয়ে।
+তাই এখানে id="title" সিলেক্ট করার জন্য "#title"
+দিলেই কাজ করবে। 
+*/
+
+
+let classNameSelect=document.querySelectorAll(".lead")
+console.log(classNameSelect)
+/* css এ আমরা  .(ডট) দিয়ে class select করি। 
+তাই এখানে  class="lead" কে সিলেক্ট করার জন্য 
+querySelectorAll() এর মধ্যে ".lead" দিলেই 
+কাজ হবে। 
+*/
+
+ 
+let tagNameSelect=document.querySelectorAll("li")
+console.log(tagNameSelect)
+/* li ট্যাগগুলোকে সিলেক্ট করার জন্য 
+querySelectorAll() এর মধ্যে "li" দিলেই 
+কাজ হয়ে যাবে।
+*/
+
+
+let nameSelect=document.querySelectorAll('[name^="list-item-one"]')
+console.log(nameSelect)
+/* css এ আমরা Attribute Select করি এভাবেঃ-
+attribute^="value"
+
+তাই, এখানে name="list-item-one" select করার জন্য 
+querySelectorAll() এর ভেতরে '[name^="list-item-one"]'
+দিলেই কাজ হয়ে যাবে। 
+
+কারণ এখানে attribute হলো name
+আর value হলো "list-item-one"
+
+*/
+</script>
+</body>
+</html>

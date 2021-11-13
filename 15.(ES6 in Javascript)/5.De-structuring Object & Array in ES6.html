@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Object Destructuring 
+let person={
+
+   name:'Anik',
+   phone:01787566199,
+   address:{
+     home:'Jhenidha',
+     country:'Bangladesh'
+   }
+}
+let {name,phone,address:{home,country}}=person
+console.log(name,phone,home,country)
+/* Object Destructuring মানে হলো অবজেক্টটিকে 
+ফেলা।
+
+প্রথমে let দিয়ে তারপর সেকেন্ড ব্রাকেটের মধ্যে অবজেক্টের 
+প্রোপার্টি নেমগুলো কমা দিয়ে দিতে হবে। যদি মাল্টিপল 
+অবজেক্ট থাকে তাহলে ঐ মাল্টিপল অবজেক্টের নেম দিয়ে কোলন দিয়ে 
+মাল্টিপল অবজেক্টটার ভিতরে যে প্রোপার্টি আছে সেগুলো দিতে হবে। 
+সবশেষে সমান চিহ্ন দিয়ে অবজেক্টটা দিতে হবে। 
+
+
+এখানে person নামক অবজেক্ট নিয়েছি এর ভেতরে প্রোপার্টি 
+হিসেবে name:"",phone: দিয়েছি। আর এর ভেতরে আরেকটা
+প্রোপার্টি দিয়ে এর মধ্যে অবজেক্ট ক্রিয়েট করেছি যার নাম 
+address:{} এই address এর ভেতরে home:"" এবং
+country:"" নামক দুটি প্রোপার্টি নিয়েছি। 
+
+
+এখন let দিয়ে তারপর সেকেন্ড ব্রাকেট নিয়েছি এবং এর 
+ভেতর প্রোপার্টি কমা দিয়ে দিয়েছি। তারপর সমান চিহ্ন দিয়ে 
+অবজেক্টটা(person) দিতে হবে। 
+এরকমঃ let {name,phon}=obj
+
+
+এখন এটা যেহেতু মাল্টিপল অবজেক্ট তাই let এর ভেতর 
+মাল্টিপল অবজেক্ট প্রোপার্টি(address) কোলন দিয়ে এরপর
+সেকেন্ড ব্রাকেটের ভেতর address প্রোপার্টি(home,country)
+দিয়েছি। 
+এরকমঃ let {name,phon,address:{home,country}}=person
+
+
+
+এরপর console.log করেছি সবগুলো 
+প্রোপার্টি নেম(name,phone,home,country) দিয়ে।
+
+
+নিয়মঃ let {}=object
+*/
+
+
+
+//Array Destructuring
+let arr=[1,2,3,4,5]
+let [first,second]=arr
+console.log(first,second)
+//এখানে প্রথম দুটি বের করেছি 
+
+
+let [first1,second1,,,last]=arr
+console.log(first,second,last)
+/* এখানে প্রথম দুটো ও শেষের ভেলু বের করেছি। 
+এজন্য let [first,second এর পর কমা দিয়ে 
+third ও fourth এর গ্যাপ পুরন করে last দিয়েছি]
+
+তারপর কনসোল লগ করতে হবে যেগুলা বের করব তার
+নাম দিতে হবে। 
+
+এখানে first,second & last দিয়েছি।
+*/
+</script>
+</body>
+</html>

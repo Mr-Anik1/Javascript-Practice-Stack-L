@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//call,apply and bind method
+
+function hello(){
+ console.log(this)
+ console.log(this.a+this.b)
+}
+hello.call()
+hello.apply()
+/* call & apply method দ্বার কোন ফাংশনকে
+instantly কল করা যায়। এখানে প্রথম কনসোল 
+লগ দ্বারা window object এবং দ্বিতীয় কনসোল 
+দ্বারা NaN শো করবে। কারণ this.a & this.b 
+undefined.*/
+
+
+hello.call({a:20,b:30})
+hello.apply({a:10,b:15})
+/* এখন call & apply method কাজ করেছে,
+কারণ বাইরে থেকে a & b এর মান দেওয়া হয়েছে
+একটি অবজেক্টের মাধ্যমে। 
+
+call & apply method একারণেই ব্যবহার করা 
+হয়, বাইরে থেকে একটি অবজেক্ট দিয়ে বলে আমার 
+এই অবজেক্ট অনুসারে কাজ কর।এই কাজটা সাধারণ
+ভাবে ফাংশন কল করে করানো সম্ভব না। 
+*/
+
+
+
+
+//apply & call এর মধ্যে পার্থক্য 
+function kitty(c,d){
+ console.log(this.a+this.b+c+d)
+}
+kitty.call({a:10,b:5},6,9)//30
+kitty.apply({a:3,b:5},[2,8])//18
+
+/* call & apply একই কাজ করে থাকে, তবে 
+call এর সময় c ও d এর মান কমা দিয়ে ইনপুট
+দিতে হয়। এভাবেঃ({a:,b:,},c,d)
+
+কিন্তু apply এ এভাবে কমা দিয়ে ইনপুট দিলে কাজ 
+হবে না। apply এ অ্যারে আকারে c & d এর মান 
+দিতে হবে।এভাবেঃ({a:,b:},[c,d])
+*/
+
+
+
+//bind এর কাজ 
+function hi(c,d){
+ console.log(this.a+this.b+c+d)
+}
+var result=hi.bind({a:3,b:5})
+/*বেধে রাখা হয়েছে কিন্তু রেজাল্ট শো করবে 
+না। যতক্ষণ না result কল করা হয়। 
+*/
+result(2,10)//20
+
+result(50,10)//68
+console.log(typeof result)//function 
+
+/* bind method এ একটি ভেরিয়েবলের মধ্যে
+bind কল করা হয়। এর মধ্যে অবজেক্টের মাধ্যমে
+a & b এর মান দেওয়া হয়। পরবর্তীতে ঐ ভেরিয়েবলটি
+কল করে রেজাল্ট শো করা হয়। 
+
+
+
+bind method এর সুবিধা হলো এটি instantly 
+ফাংশন কল না করে একটি ভেরিয়েবলের মধ্যে স্টোর
+করে রাখে। যার কারণে এটি পরবর্তীতে হাজার বারও
+ব্যবহার করা যায়।যেমন দ্বিতীয়বার রেজাল্ট শো করেছি 
+result(50,10). 
+
+এরকম অসংখ্যবার রেজাল্ট শো করানো যাবে। 
+*/
+
+
+/* call,apply & bind এর বৈশিষ্ট্যঃ
+
+★call & apply method প্রায় একই, দুটোই 
+instantly function কল করে। 
+
+★call method এ কমার মাধ্যমে c,d… এর 
+মান ইনপুট করা যায়। 
+
+★apply method এ অ্যারের মাধ্যমে c,d.. এর 
+মান ইনপুট করা হয়।
+
+★bind method এ একটি ভেরিয়েবলের মধ্যে  bind 
+কল করে তা স্টোর করা হয়। পরবর্তীতে ঐ ভেরিয়েবলটি
+ফাংশন আকারে অসংখ্যবার ব্যবহার করা যায়। 
+
+*/
+
+</script>
+</body>
+</html>

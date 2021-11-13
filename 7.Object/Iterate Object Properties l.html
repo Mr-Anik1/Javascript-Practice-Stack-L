@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var a={
+
+    x:56,
+    y:17,
+    z:53
+}
+
+//in operator
+console.log("x" in a)
+/*এর মাধ্যমে কোন অবজেক্টে এ উল্লেখিত 
+ভেলু আছে কিনা তা চেক করে। 
+
+এখানে "x" আছে কিনা তা চেক করেছি। 
+x আছে বিধায় ফলাফল true */
+
+
+
+for(var i in a){
+console.log(i)
+}
+/*Object এ কোন কোন key আছে তা চেক করা।
+যেমন এখানে x,y,z কী আছে তা বের করেছি */
+
+
+
+for(var i in a){
+console.log(i)
+console.log(a[i])
+}
+/*Key গুলোর ভেলু চেক করা। */
+
+
+
+</script>
+</body>
+</html>

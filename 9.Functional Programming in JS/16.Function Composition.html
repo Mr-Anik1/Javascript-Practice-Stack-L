@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*একটি ফাংশনের ইনপুট যদি আরেকটি ফাংশনের 
+আউটপুট হিসেবে প্রোভাইড করতে পারি তাহলে
+সেটাকে function composition বলে!
+*/
+
+//function composition 
+function print(input){
+ console.log(input)
+}
+
+function addBy10(n){
+  return n+10
+}
+
+function sum(a,b){
+ return a+b
+}
+print(addBy10(sum(5,5)))
+
+/*এখানে ১ম ফাংশন হলো print, এর 
+input এ addBy10 ফাংশন এর আউটপুট!
+
+তারপর, addBy10 ফাংশনের ইনপুটে 
+sum ফাংশনের আউটপুট রাখা হয়েছে। 
+
+
+এরকম বিষয়টাঃ-
+print(addBy10(sum(a,b)))
+এখানে প্রথমে sum এর কাজ সম্পন্ন হয়েছে
+অর্থাৎ a ও b এর যোগ সম্পন্ন হয়েছে। 
+তারপর,addBy10 ফাংশনে উক্ত যোগফলের সাথে 
+১০ যোগ হয়েছে। অতঃপর print function এ
+print হয়েছে। 
+*/
+
+
+</script>
+</body>
+</html>

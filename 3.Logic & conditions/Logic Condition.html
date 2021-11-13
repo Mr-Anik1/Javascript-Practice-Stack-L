@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+var a=23
+var b=34666
+
+
+//if Condition
+
+if(a>b){
+  console.log(a + 'is grater than' +  b)
+}
+
+if(a<b){
+  console.log(b + 'is grater than' + a)
+}
+
+
+
+
+
+//জোড়(Even) ও বিজোড় (Odd) নির্ণয় 
+
+var n=2077
+if(n%2==0){
+  console.log(n + 'is even number')
+}
+/* n কে 2 দ্বারা ভাগ করলে ভাগশেষ 0 এর
+সমান হলে n জোড় সংখ্যা
+*/
+
+if(n%2==1){
+  console.log(n + 'is odd number')
+}
+
+/*n কে 2 দ্বারা ভাগ করলে ভাগশেষ 1 এর
+সমান হলে n বিজোড় সংখ্যা*/
+
+
+
+
+
+
+//else condition
+
+var n=2077
+if(n%4==0){
+console.log(n + " is Leap Year")
+}
+else{
+console.log(n + " is not leap Year")
+}
+
+
+
+
+//else if condition 
+
+var a=50
+var b=50
+
+if(a>b){
+  console.log(a + ' is greater than ' + b )
+}
+else if(b>a){
+  console.log(b + ' is greater than ' + a)
+}
+else{
+  console.log('a & b are same')
+}
+
+/* ২ এর অধিক কনডিশন চেক করতে 
+else if ব্যবহার করা হয় */
+
+
+
+
+
+
+
+var n=0
+if(n==0){
+  console.log(n + ' is zero')
+}
+else if(n%2==0){
+  console.log(n + ' is even number ')
+}
+else{
+  console.log(n + ' is odd number ')
+  }
+  
+  
+  
+ /*আজকের দিনটা কী বার সেটা বের করার নিয়ম 
+ প্রথমে Switch Case দিয়ে*/
+   
+   
+ var date=new Date()
+ var today=date.getDay()
+ 
+ switch(today){
+   
+   case 0:
+     console.log('Today is Sunday ')
+     break
+     
+   case 1:
+     console.log('Today is Monday ')
+     break
+     
+   case 2:
+     console.log('Today is Tuesday')
+     break
+     
+   case 3:
+     console.log('Today is Wednesday ')
+     break
+     
+   case 4:
+     console.log('Today is Thursday ')
+     break
+     
+   case 5:
+     console.log('Today is Friday ')
+     break
+     
+   case 6:
+     console.log('Today is Saturday ')
+     break
+     
+   default:
+     console.log('Error ')
+ }
+  
+
+/*0=Sunday
+  1=Monday 
+  2=Tuesday 
+  3=Wednesday 
+  4=Thursday 
+  5=Friday
+  6=Saturday 
+  
+  
+যখন today=date.getDay() এর মান 
+বের করা হয় তখন সেটা 0,1,2....
+এরকম আকারে বের হয়। তাই 0 কে 
+Sunday ধরা হয়। 
+*/
+
+
+
+
+
+var date=new Date()
+var today=date.getDay()
+
+if(today==0){
+console.log("Sunday")
+}
+else if(today==1){
+console.log("Monday")
+}
+else if(today==2){
+console.log("Tuesday")
+}
+else if(today==3){
+console.log("Wednesday")
+}
+else if(today==4){
+console.log("Thursday")
+}
+else if(today=5){
+console.log("Friday")
+}
+
+else if(today==6){
+console.log("Saturday")
+}
+else{
+  console.log('System Error ')
+}
+
+/*আবার এই একই কাজ if, else if দিয়ে করা যায়*/
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*First class Function in JS:
+First class Function হওয়ার জন্য 
+ছয়টি রুল ফলো করতে হয়।এখানে চারটি 
+দেখানো হলোঃ-
+*/
+
+//1.A Function can be Stored in a Variable 
+function add(a,b){
+return a+b
+}
+var sum=add
+console.log(sum(2,3))
+console.log(typeof sum)
+/*এখানে add() ফাংশনটিকে sum নামক 
+ভেরিয়েবলের মধ্যে স্টোর করা হয়েছে।  
+
+আবার, sum এর টাইপ দেখলে একে 
+function রূপে শো করেছে। 
+*/
+
+
+
+
+
+//2.A Function can be Stored in an Array 
+var arr=[]
+arr.push(add)
+console.log(arr)
+console.log(typeof arr[0])//function 
+console.log(arr[0](5,5))
+/*এখানে add() ফাংশনটিকে arr নামক 
+Array এর মধ্যে স্টোর করা হয়েছে।  
+
+push() এর মাধ্যমে Empty Array এর মধ্যে
+add() ফাংশনটি স্টোর করা হয়েছে। 
+যেহেতু এই অ্যারের মধ্যে add() ফাংশনটির 
+index নাম্বার 0 তাই, 
+
+console.log(arr[0]) দ্বারা একে প্রকাশ করা 
+হয়েছে। আর নতুন নাম্বার যোগ করার জন্য 
+arr[0](5,5) দিয়েছি। 
+
+এছাড়া arr[0] এর টাইপ দেখলে একে
+function হিসেবে প্রকাশ করে।
+*/
+
+
+
+
+//3.A Function can be Stored in an Object
+var obj={
+  x:add
+}
+console.log(obj)
+console.log(typeof obj.x)//function 
+console.log(obj.x(7,7))
+/*এখানে obj নামক অবজেক্টের মধ্যে 
+x ভেলুতে add ফাংশনটি স্টোর করেছি। 
+
+obj.x দ্বারা x এর ভেলু প্রকাশ করে।
+obj.x এর টাইপ দেখলে একে function 
+হিসেবে প্রকাশ করে। 
+
+এখানে নতুন  মান দেওয়ার জন্য 
+obj.x(7,7) করা হয়েছে। 
+*/
+
+
+//we creat a Function as need
+setTimeout(function a(){
+console.log("Hello anik...")
+},1000)
+/*এখানে আমাদের প্রয়োজন মাফিক একটা 
+function creat করেছি, setTimeout এর মধ্যে।*/
+
+
+
+</script>
+</body>
+</html>

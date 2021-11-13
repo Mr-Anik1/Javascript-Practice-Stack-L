@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*every এর কাজ হলো কোন অ্যারের 
+সবগুলো ভেলু Even/Odd/Negative/
+positive কিনা। 
+
+অর্থাৎ, লজিক অনুসারে সবগুলো ভেলু একই 
+হলে true শো করবে অন্যথায় false দেখাবে।
+*/
+//every
+var a=[1,2,3,4-5,5,6,-67,7,8,9]
+var res1=a.every(function(value){
+ return value%2==0
+})
+console.log(res1)//Ans:false
+/*এখানে লজিক দিয়ে দেখতো চেয়েছি, সবগুলো
+ভেলু জোড় কিনা? সবগুলো জোর সংখ্যা না, তাই
+false শো করেছে। */
+
+var b=[1,2,3,4,5,0,6, 7,8]
+var res2=b.every(function(value){
+   return value>=0
+})
+console.log(res2)//Ans:true
+/*এখানে লজিক দিয়ে দেখতে চেয়েছি, সবগুলো 
+ভেলু পজিটিভ কিনা? সংখ্যাগুলো পজিটিভ তাই,
+true শো করেছে। */
+
+
+
+
+
+
+/* some হলো কোন অ্যারেতে কমপক্ষে একটিমাত্র ভেলু
+লজিক অনুসারে Even/Odd/Positive/Negative 
+হলে true শো করবে, অন্যথায় false শো করবে!
+*/
+
+var c=[1,2,3,4,5,6,7,-7]
+var res3=c.some(function(value){
+ return value<0
+})
+console.log(res3)//Ans:true
+/*লজিক দিয়ে দেখতে চেয়েছি কোন ভেলু 
+নেগেটিভ আছে কিনা? এখানে কেবল একটিমাত্র 
+ভেলু নেগেটিভ আছে,তাই true শো করেছে। 
+
+একাধিক ভেলু নেগেটিভ হলেও true শো করত।
+তবে কমপক্ষে একটি আছে কিনা তা যাচাই করা। 
+*/
+
+
+
+</script>
+</body>
+</html>

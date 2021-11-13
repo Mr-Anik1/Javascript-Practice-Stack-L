@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//async Iterator 
+let anik={
+  [Symbol.myAnik](){
+    let i=0
+    return{
+      next(){
+        if(i<5){
+          return Promise.resolve({
+            value:i++,
+            done:false
+          })
+        }
+        else{
+          return Promise.resolve({
+            done:true
+          })
+        }
+      }
+    }
+  }
+}
+
+let hex=anik[Symbol.myAnik]();//নিচে ইফি নিয়ে কাজ করেছি তাই এখানে সেমিকোলন দিতে হয়েছে 
+
+(async function(){
+  console.log(await hex.next())
+  console.log(await hex.next())
+  console.log(await hex.next())
+  console.log(await hex.next())
+  console.log(await hex.next())
+  console.log(await hex.next())
+})()
+
+
+</script>
+</body>
+</html>

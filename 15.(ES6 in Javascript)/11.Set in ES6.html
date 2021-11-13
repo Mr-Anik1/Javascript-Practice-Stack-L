@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//set in ES6
+let arr=[1,2,3]
+let set=new Set(arr)
+console.log(set)
+
+//কিছু এড করা
+let sets=new Set([7,8,9])
+sets.add(5)
+sets.add(7)
+sets.add(6)
+sets.add(8)
+console.log(sets)
+/* এখানে প্রথমে set এর ভেতরে একটি অ্যারে রাখা
+হয়েছে। পরে আবার add() এর মাধ্যমে উক্ত অ্যারেতে
+নতুন কিছু এড করা হয়েছে। এখানে 7 ও 8 আবার এড
+করা হয়েছে। তাই অ্যারেতে 7 ও 8 ডাবল হওয়ার কথা
+কিন্তু হয়নি। এরকম হয়েছেঃ [5,6,7,8,9]
+
+★ Set() এর পাওয়ার হলো এখানে কোন ভেলু ডাবল
+হবে না। 
+*/
+
+
+
+//Set() এর কিছু Methods 
+
+//clear() Method
+let nSet=new Set(['anik','at','bot'])
+nSet.clear()
+console.log(nSet)
+/*clear() এই মেথডের মাধ্যমে কোন সেটকে clear
+করা হয়৷ এখন উপরের সেটটি clear হয়ে empty 
+হয়ে যাবে!
+*/
+
+
+//delete() Method
+nSet.delete('at')
+console.log(nSet)
+/* delete() মেথডের মাধ্যমে সেট এর কোন নির্দিষ্ট 
+ভেলুকে ডিলিট করা হয়। যেমন এখানে 'at' ভেলুকে
+ডিলিট করা হয়েছে। 
+*/
+
+
+
+//has() Method
+let hSet=new Set([1,2,3])
+console.log(hSet.has(2))//true
+/* has() মেথড দ্বারা কোন সেটে উক্ত ভেলুটি আছে 
+কিনা তা চেক করা হয়৷ যেমন এখানে 2 আছে কিনা তা
+চেক করা হয়েছে, 2 আছে তাই true শো করেছে। 
+*/
+
+
+
+
+//keys() & values()
+let kSet=new Set(['an','the','a'])
+console.log(kSet.keys())//set Iterator
+console.log(kSet.values())//set Iterator
+/* keys() & values() একই জিনিস প্রকাশ করে।
+এরা iterator return করে। 
+*/
+
+
+
+/*keys() & values() যে Iterator রিটার্ন
+করে তা দেখানো হলোঃ
+*/
+let keyIterate=kSet.keys()
+console.log(keyIterate.next())
+//এটা কাজ করছে 
+
+
+
+
+//set টা iterabol কিনা তা চেক করা
+let setti=new Set(['anik','manik','tonik']) 
+
+function isIterable(obj){
+  return typeof obj[Symbol.iterator]==='function'
+}
+
+console.log(isIterable(setti))//true
+/* set টি ইটারেবল তাই true return করেছে!
+আমরা জানি ইটারেবলে for of loop চালানো যায়,
+তাই নিচে for of লুপ চালিয়ে দেখব৷ 
+*/
+
+
+for(let v of setti){
+  console.log(v)
+}
+/* for of loop চালানো গেছে। আর এটা যথাক্রমে 
+anik
+manik
+tonik
+শো করেছে!
+*/
+
+
+
+//entries() Method
+console.log(setti.entries())
+/* entries() এর কাজ হলো keys এবং 
+ভেলুগুলো শো করানো। 
+*/
+
+</script>
+</body>
+</html>

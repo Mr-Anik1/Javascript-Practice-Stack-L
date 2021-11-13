@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var a="I am"
+var b="Mr. Anik"
+
+//concat method
+var c=a.concat(" ",b)
+console.log(c)
+/*concat এর দ্বারা জোড়া লাগানো হয়,
+এখানে I am ও Mr.Anik কে জোড়া 
+লাগানো হয়েছে। */
+
+//substr()
+console.log(c.substr(9))
+/*I am থেকে Mr. পর্যন্ত ৯ তাই 
+substr(9) লিখলে ৯ এর পরের অংশ শো
+করবে।এখানে Anik শো করেছে।*/
+
+//charAt
+console.log(c.charAt(3))
+/*charAt দ্বারা কোন নাম্বারে কোন অক্ষর 
+ সেটা শো করে। এখানে charAt(3) দ্বারা 
+ m শো করেছে। */
+
+
+//startsWith()
+console.log(c.startsWith("I"))//true
+console.log(b.startsWith("Anik"))//false
+/*কী দ্বারা শুরু হয়েছে সেটা লিখলে
+true এবং অন্যকিছু লিখলে false.
+এখানে startsWith("I") লিখা হয়েছে, 
+c বাক্যটা I দ্বারা শুরু হয়েছে তাই ফলাফল 
+true.
+*/
+
+
+//endsWith()
+console.log(c.endsWith("Anik"))//true
+console.log(c.endsWith("Mr."))//false
+/*কী দ্বারা  শেষ হয়েছে সেটা লিখলে
+true এবং অন্যকিছু লিখলে false.
+এখানে endsWith("Mr.") লিখা হয়েছে, 
+c বাক্যটা Mr. দ্বারা শেষ হয়নি, হয়েছে
+Anik দ্বারা তাই ফলাফল false
+*/
+
+
+//toUpperCase()
+console.log(c.toUpperCase())
+/*এর দ্বারা সব অক্ষরকে বড় হাতের অক্ষরে
+ পরিণত করে। এখানে, c.toUpperCase()
+ এর মাধ্যমে c বাক্যের সবগুলো অক্ষরকে 
+ বড় হাতের করা হয়েছে*/
+ 
+//toLowerCase()
+console.log(c.toLowerCase())
+/*এর দ্বারা সব অক্ষরকে ছোট হাতের অক্ষরে
+ পরিণত করে। এখানে, c.toLowerCase()
+ এর মাধ্যমে c বাক্যের সবগুলো অক্ষরকে 
+ ছোট হাতের করা হয়েছে*/
+ 
+ 
+//trim()
+console.log("   addsff   adfx   ".trim())
+/*trim() এর মাধ্যমে কোন শব্দ লিখলে 
+তার অতিরিক্ত ফাকা অংশ রিমুভ করা হয়*/
+
+//split()
+console.log(c.split(" "))
+/*split("") এর মাধ্যমে কোন 
+বাক্যকে Arra আকারে নেওয়া হয়। */
+
+
+
+</script>
+
+</body>
+</html>

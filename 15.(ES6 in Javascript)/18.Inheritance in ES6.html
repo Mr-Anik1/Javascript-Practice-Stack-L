@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Inheritance in ES6
+class Shape{
+   draw(){
+    console.log('Drawing....')
+   }
+}
+
+class Circle extends Shape{
+  constructor(wid,hei){
+  super()//super কল না করলে কাজ করবে না
+    this.width=wid
+    this.height=hei
+  }
+  
+  msg(){
+   console.log(this.width*this.height)
+  }
+}
+let c1=new Circle(5,4)
+console.log(c1)
+console.log(c1.draw())
+
+
+/* এখানে Shape নামক একটি class নিয়েছি যেটা 
+Circle এর মধ্যে inheritance করেছি। 
+
+Circle এর মধ্যে shape এর বৈশিষ্ট্য প্রবেশ করানোর 
+জন্য(inheritance ঘটানো) Circle এর পর 
+extends নামক keyword দিয়ে তারপর shape দিয়েছি। 
+এরপর Circle এর constructor এর মধ্যে super()
+কল করতে হবে নাহলে কাজ করবে না।
+ 
+এরকমঃ class Circle extends Shape{
+      constructor(){
+       super()
+      }
+    }
+    
+    
+    
+    
+★গুরুত্বপূর্ণ টপিক★
+Inheritance ঘটানোর জন্য extends দিয়ে যাকে
+inheritance করব(Shape কে) তার name দিতে 
+হবে। তারপর যার মধ্যে inheritance করব(Circle) 
+তার constructor এর ভেতর super() কল করতে হবে। 
+*/
+
+
+</script>
+</body>
+</html>

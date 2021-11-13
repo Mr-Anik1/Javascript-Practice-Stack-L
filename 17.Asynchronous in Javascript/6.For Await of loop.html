@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//এটা Dcoder এ রান করতে হবে কিছু সমস্যা হয়েছে 
+//for await of loop
+
+let anikVai={
+  [Symbol.loveAnik](){
+    let i=0;
+    return{
+      next(){
+        if(i<10){
+          return Promise.resolve({
+            value:i++,
+            done:false
+          })
+        }
+        else{
+          return Promise.resolve({
+            done:true
+          })
+        }
+      }
+    }
+  }
+}
+let myFor=anikVai[Symbol.loveAnik]();
+(async function(){
+  for await (let v of anikVai){
+   console.log(v)
+  }
+})()
+
+
+
+</script>
+</body>
+</html>

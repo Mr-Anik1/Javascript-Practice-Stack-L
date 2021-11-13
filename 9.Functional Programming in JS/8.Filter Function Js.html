@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Filter Function 
+var a=[1,2,3,4,5,6,7,8]
+var aa=a.filter(function(value){
+ return value%2==1
+})
+console.log(aa)
+/*কোন অ্যারের ডেটাগুলো ফিল্টার করে
+আশানুরূপ ডেটা বের করে।যেমন এখানে আমি 
+শুধু বিজোড় সংখ্যাগুলো বের করেছি। 
+ */
+
+
+
+
+function hello(a,cb){
+  var newArr=[]
+   for(var i=0;i<a.length;i++){
+    if(cb(a[i],i,a)){
+     newArr.push(a[i])
+    }
+   }
+   return newArr
+}
+
+var even=hello(a,function(value){
+ return value%2==0
+})
+console.log(even)
+
+
+</script>
+</body>
+</html>

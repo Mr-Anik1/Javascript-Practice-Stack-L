@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+let obj=[
+ {name:"Anik",age:20,roll:90},
+ {name:"Manik",age:30,roll:34},
+ {name:"Gonik",age:14,roll:02}
+]
+obj.sort((a,b)=>a.age-b.age)
+console.log(obj)
+
+
+
+//key ও value sort করা entries() এর মাধ্যমে 
+let obj1={
+  "you":10,
+  "bu":5,
+  "new":3,
+  "go":11
+
+}
+let sortObj=Object.entries(obj1).sort((a,b)=>a[1]-b[1])
+console.log(sortObj)
+
+
+
+
+//keys গুলো sort করা
+let obj2={
+  "you":10,
+  "bu":5,
+  "new":3,
+  "go":11
+
+}
+let sortObj1=Object.keys(obj2).sort((a,b)=>obj2[a]-obj2[b])
+console.log(sortObj1)
+</script>
+</body>
+</html>.

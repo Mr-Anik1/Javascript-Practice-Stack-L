@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//creat CustomError 
+
+class CustomError extends Error{
+    constructor(msg){
+    super(msg)
+    
+    if(Error.catpureStackTrace){
+    Error.catpureStackTrace(this,CustomError)
+    }
+    }
+}
+/* আমরা নিজেরা একটা custom error তৈরী করেছি, 
+এটা নিচে ব্যবহার করলে কাজ করবে৷ 
+*/
+
+
+try{
+console.log('I am Mr.Anik')
+throw new CustomError('I am Your Error')
+console.log('What\'s Your Name')
+}
+catch{
+ console.log('I\'m new Error handling in ES6 or Next')
+}
+finally{
+ console.log('I am Finally block')
+}
+/* এখানে throw new Error এর বদলে আমাদের নিজেদের 
+তৈরী CustomError ব্যবহার করেছি। 
+এভাবেঃ- throw new CustomError()
+*/
+</script>
+</body>
+</html>

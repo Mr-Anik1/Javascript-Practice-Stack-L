@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//try catch এর মাধ্যমে error handling 
+
+function go(text){
+
+   try{
+   let str=text.trim()//trim()এর মাধ্যমে সামনে পেছনের বাড়তি স্পেস বাদ দেওয়া হয় 
+   let words=str.split('')
+   return words
+   }
+   catch(e){
+   console.log(e)
+   }
+}
+let res=go('   Anik vai is good')
+console.log(res)//Anik...
+
+let res1=go(446)
+console.log(res1)//text.trim is not a function 
+/* যদি try ব্লকে কোন Error পায় তাহলে সেটা 
+catch ব্লকে গিয়ে কনসোল লগ হবে। 
+
+এখানে catch ব্লকে শুধু Error এর ম্যাসেজটা 
+কনসোল লগ করেছি। (চাইলে নিজের মত ম্যাসেজ 
+তৈরী করে কনসোল করা যাবে যেটা নিচে করেছি)
+*/
+
+
+
+
+function go(text){
+
+   try{
+   let str=text.trim()
+   let words=str.split(' ')
+   return words
+   }
+   catch(e){
+   console.log('Please Enter text')
+   }
+}
+let res3=go(356)
+console.log(res3)//please enter text
+
+/* try ব্লকে কোন Error পেলে সেটা catch ব্লকে 
+গিয়ে কনসোল লগ করা যাবে৷ যেমন আমি এখানে 
+কনসোল করেছি "please enter text"
+
+ইউজার যদি text না দিয়ে নাম্বার দেয় তাহলে 
+catch ব্লকের কনসোল শো করবে। 
+
+আমি number দিয়েছি বিধায় catch block এর কনসোল 
+শো করেছে "please enter text"
+*/
+
+
+
+</script>
+</body>
+</html>

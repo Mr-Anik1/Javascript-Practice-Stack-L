@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<div class="container">
+
+<h1>I Love Bangladesh </h1>
+
+<ul id="list">
+ <li>Anik</li>
+ <li>Manik</li>
+ <li>Tonik</li>
+</ul>
+
+</div>
+
+<script type="text/javascript">
+/*DOM Traverse এর মানে হলো html DOM এ 
+প্রয়োজনীয় Elements গুলো খুজে বের করা! 
+
+এই কাজগুলো আমরা querySelector বা 
+getElementsByTagName/Name.... এগুলোর 
+মাধ্যমে করতে পারতাম। কিন্তু কিছু জিনিস আছে 
+যেগুলো এসব দিয়ে বের করা যায় না। তাই এখানে 
+DOM Traversing ব্যবহার করা হয়ে থাকে৷ 
+*/
+
+
+
+let myList=document.getElementById('list')
+console.log(myList)//Html ul list Element
+/* list নামক id টি সিলেক্ট করেছি, আর এটি
+ul এ আছে। 
+*/
+
+
+
+//Parents বের করা
+let parent=myList.parentElement
+console.log(parent)//html div collection
+/* উপরের list নামক id টির Parent বের করার 
+জন্য parent ভেরিয়েবলের মধ্যে myList.parentElement 
+স্টোর করেছি, তারপর parent কনসোল লগ করলে 
+parent টি শো করবে৷ 
+
+এখানে ul এর parent হলো div এর ক্লাস container.
+*/
+
+
+
+
+
+//childeren বের করা 
+let myChildren=myList.children
+console.log(myChildren)//HTML Collection 
+/* কোন কিছুর children বের করার জন্য 
+.(ডট) children প্রোপার্টি  ব্যবহার করা হয়। 
+
+এখানে ul এর children গুলো বের হবে। 
+কারণ list নামক id টি ul এর মধ্যে আছে। 
+*/
+
+
+
+
+
+//Previous Element Sibling
+console.log(myList.previousElementSibling)//HTML Heading Element
+/* previousElementSibling এর মানে হলো 
+ঐ element এর পূর্বে কী আছে। 
+
+যেমন এখানে ul এর previousElementSibling 
+বের করেছি যা heading শো করেছে। কারণ ul এর 
+পূর্বে যে ইলিমেন্ট আছে তা হলো h1 heading. 
+
+
+★
+যদি previousSibling বের করতাম তাহলে সেটা 
+নোড ইলিমেন্ট(html elements,text,comment) 
+শো করত। আর এখানে ul এর পূর্বে যে নোড 
+ইলিমেন্ট আছে সেটা হলো text. কারণ h1 heading
+এর পর আমরা স্পেস দিয়ে নিচের লাইনে ul লিখেছি, 
+তাই text শো করবে।
+★
+
+
+
+নোটঃ-
+★শুধু Html Element বের করার জন্য previousElementSibling 
+ব্যবহার করা হয়। 
+
+★Node Elements বের করার জন্য previousSibling 
+ব্যবহার করা হয়। 
+*/
+
+
+
+//nextElementSibling
+console.log(myList.nextElementSibling)//null
+/* nextElementSibling এর মাধ্যমে ঐ ইলিমেন্ট
+এর পরে কী আছে তা শো করে।
+
+এখানে ul এর পরে কিছু নেই তাই null শো করেছে।
+*/
+
+
+
+
+//firstElementChild
+console.log(myList.firstElementChild)
+/* firstElementChild এর মাধ্যমে ঐ 
+ইলিমেন্টটার প্রথম child কে বের করে আনে। 
+
+যেমন এখানে ul এর firstElementChild হলো
+<li>Anik</li>
+
+★নোটঃ- myList ভেরিয়েবলের মধ্যে স্টোরকৃত 
+list নামক id টি ul এর মধ্যে আছে
+*/
+
+
+
+//lastElementChild
+console.log(myList.lastElementChild)
+/* lastElementChild এর মাধ্যমে ঐ 
+ইলিমেন্টটার শেষ child কে বের করে আনে। 
+
+যেমন এখানে ul এর lastElementChild হলো
+<li>Tonik</li>
+*/
+
+</script>
+</body>
+</html>

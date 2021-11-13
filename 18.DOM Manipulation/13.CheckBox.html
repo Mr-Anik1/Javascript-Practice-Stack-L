@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<input type="checkbox" name="cheak" value="Java">
+<label>Java</label><br>
+
+<input type="checkbox" name="cheak" value="javascript">
+<label>Javascript </label><br>
+
+<input type="checkbox" name="cheak" value="Python">
+<label>Python</label><br>
+
+<input type="checkbox" name="cheak" value="PHP">
+<label>PhP</label><br><br>
+
+<p><strong>Select Skills:</strong>
+<span id="result"></span>
+</p>
+
+<script type="text/javascript">
+
+let skills=document.getElementsByName("cheak")
+let myResult=document.getElementById("result")
+
+let checkedSkills=[];
+
+[...skills].forEach(skill=>{
+  skill.addEventListener("change",function(event){
+    if(event.target.checked){
+      checkedSkills.push(event.target.value)
+      outputSkills(myResult,checkedSkills)
+    }
+    else{
+      let ind=checkedSkills.indexOf(event.target.value)
+      checkedSkills.splice(ind,1)
+      outputSkills(myResult,checkedSkills)
+    }
+  })
+})
+
+
+function outputSkills(parent,skills){
+  let result=""
+  skills.forEach((skill,index)=>{
+   result+=`(${index+1}) ${skill} `
+  })
+ parent.innerHTML=result
+}
+
+</script>
+</body>
+</html>

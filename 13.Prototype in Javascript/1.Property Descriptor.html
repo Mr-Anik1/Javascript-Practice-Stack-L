@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Property Descriptor 
+
+var obj={
+  name:"Anik"
+}
+
+Object.defineProperty(obj, 'name',{
+  configurable:true,
+  enumerable:true,
+  writeable:true
+
+})
+console.log(obj)
+/*
+Property Descriptor এর মাধ্যমে,ইচ্ছামতো 
+ভেলুগুলো কী করব তা ঠিক করা যায়। 
+
+Configurable = অবজেক্ট এর ভেলু বাইরে থেকে ডিলিট করা যাবে কিনা! 
+
+enumerable = বাইরে থেকে লুপ চালানো যাবে কিনা। 
+
+writeable = বাইরে থেকে এক্সেস নেওয়া যাবে কিনা।
+*/
+
+
+
+
+Object.defineProperty(obj, 'name',{
+  configurable:false,
+  enumerable:false,
+  writeable:false,
+  value:"Anik Pavel Zu"
+})
+console.log(obj)
+/*  আমি যদি মনে করি এই অবজেক্টে কেউ কিছু 
+চেঞ্জ করতে পারবে না, এবং এর একটি নির্দিষ্ট ভেলু 
+সেট করব তাহলে সেটাও পারব। 
+
+
+configurable:false করার মাধ্যমে কেউ অবজেক্টের 
+কিছু বাইরে থেকে ডিলিট করতে পারবে না। 
+
+enumerable:false করার মাধ্যমে কেউ অবজেক্টের 
+কিছু বাইরে থেকে লুপ চালাতে পারবে না। 
+
+writeable:false করার মাধ্যমে কেউ অবজেক্টের 
+কিছু বাইরে থেকে এক্সেস নিতে পারবে না।
+
+
+
+value:"Anik Pavel Zu" => এটার মানে হলো 
+আমি name এর ভেলু একবারে সেট করে দিয়েছি। 
+কেউ যদি এখন obj এর name:""  এর ভেলু 
+চেঞ্জও করে তাহলে কোন কাজ হবে না। 
+name এর ভেলু "Anik Pavel Zu" এটাই শো করবে।
+কারণ এটা ডিফল্টভাবে দেওয়া হয়েছে। 
+*/
+
+
+
+
+
+</script>
+</body>
+</html>

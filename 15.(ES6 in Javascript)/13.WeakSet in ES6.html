@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//WeakSet()
+let a={aa:10}, b={bb:20}
+let wSet=new WeakSet([a,b])
+console.log(wSet)
+/* WeakSet এ primitive data নিয়ে কাজ করা 
+যায় না ! এখানে শুধু অবজেক্ট নিয়ে কাজ করা যায়। 
+*/
+
+a=null
+console.log(wSet)
+/* সাধারণ set এ a কে null করলে সেটা set 
+থেকে মুছে যেত না। কিন্তু WeakSet এ a=null 
+করার ফলে এটা মুছে যাবে বা মেমরি থেকে clean 
+হয়ে যাবে। একে কারভেজ_কালেক্টর বলে! 
+*/
+
+console.log(wSet.has(a))//false
+/*a কে null করার কারণে a মুছে গেছে সেট থেকে 
+তাই রেজাল্ট false শো করছে
+*/
+
+
+console.log(wSet.has(b))//true
+/* bআছে কিনা তা চেক করলাম has() এর মাধ্যমে।
+b আছে তাই true শো করেছে। 
+*/
+
+
+
+
+/*WeakSet এর মাত্র তিনটা মেথড আছে
+add(),delete(),has()
+*/
+</script>
+</body>
+</html>

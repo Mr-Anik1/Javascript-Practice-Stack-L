@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+//Function এর মাধ্যমে যোগ করা
+function sum(a,b,c,d){
+
+         var result=a+b+c+d
+         console.log(result)
+         
+}
+sum(44,1,2,3)
+
+
+
+
+
+//একাধিক অ্যারেকে যোগ করা function এর মাধ্যমে
+var a=[1,2,3,4]
+var b=[5,6,7,8]
+var c=[9,10,11,12]
+
+c[4]=100//c এর মান বাড়ালাম
+
+function hello(arr){
+   var su=0
+   for(var i=0;i<arr.length;i++){
+   su+=arr[i]
+   
+   }
+console.log(su)
+
+}
+hello(a)
+hello(b)
+hello(c)
+
+
+
+//arguments এর মাধ্যমে যোগ
+function an(){
+  var sum=0
+  for(var i=0;i<arguments.length;i++){
+  sum+=arguments[i]
+  }
+  console.log(sum)
+}
+an(2,3,4)
+
+/*an() হলো প্যারামিটার। এই প্যারামিটারের 
+মধ্যে কোন ডেটা an(a,b,c) না দিয়েও
+arguments এর মাধ্যমে বাইরে থেকে ডেটা 
+দিয়ে যোগফল নির্ণয় করা যায়।*/
+
+
+
+</script>
+</body>
+</html>

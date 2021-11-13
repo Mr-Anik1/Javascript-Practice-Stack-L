@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Itarate 
+function sqr(wid){
+ this.width=wid
+ this.hi=function(){
+  console.log("Anik")
+ }
+}
+//Instance Members
+
+
+
+sqr.prototype={
+ draw:function(){
+  console.log("Draw")
+ }
+}
+//prototype Members 
+
+
+
+var sqr1=new sqr(4)
+
+console.log(Object.keys(sqr1))
+/* কোন অবজেক্টের  Instance members 
+পাওয়ার জন্য Object.keys() ব্যবহার করা
+হয়। 
+
+এখানে sqr1 এর Instance members বের 
+করা হয়েছে। তাই রেজাল্ট width,hi শো 
+করেছে। 
+*/
+
+
+
+for(var i in sqr1){
+console.log(i)
+}
+/* কোন অবজেক্টের  Prototype members 
+পাওয়ার জন্য for in loop ব্যবহার করা
+হয়। 
+
+এখানে sqr1 এর prototype members বের 
+করা হয়েছে। তাই রেজাল্ট width,hi এবং draw
+শো করেছে। 
+*/
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*inner function 
+একটা ওাংশনের ভিতরে আরেকটা ফাংশন 
+*/
+
+function a(congratulate,name){
+     function b(){
+     console.log(congratulate,name)
+     }
+     b()
+}
+a("Hello,Good afternoon","Mr. Anik")
+
+
+
+
+//শুদু first name show করা
+function person(greet,name){
+      function firstName(){
+        if(name){
+        return name.split(" ")[0]
+        }
+      }
+      var message= greet + " " + firstName()
+      console.log(message)
+}
+person("Hey You","Mr. Anik")
+/*এখানে শুধু First Name টাকে শো করেছি। 
+split() টা নেমকে অ্যারে আকারে প্রকাশ করে। 
+আর split() এর পরে যে [0] জিরো নং 
+ইনডেক্স দিয়েছি সেটা দ্বারা অ্যারের প্রথম ভেলু 
+শো করবে। এখনে শুদু Mr. শো করেছে।*/
+
+</script>
+</body>
+</html>

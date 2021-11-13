@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<ul id="list">
+ <li id="go">Anik</li>
+ <li>Manik</li>
+ <li>Tonik</li>
+ <li>Good</li>
+ <li>Bad</li>
+ <li>Bonik</li>
+ </ul>
+ 
+ 
+<script type="text/javascript">
+//Deal with Attributes
+let myList=list.lastElementChild 
+//list এর লাস্ট চাইল্ডটিকে স্টোর করা হলো
+
+
+
+//কোন কিছুর Attribute গুলো খুজে বের কর 
+console.log(list.attributes)
+/* (dot)attributes এর মাধ্যমে ul এ কী কী 
+এট্রিবিউট আছে সেগুলো বের করলাম। 
+*/
+
+
+
+//কোন কিছুতে নতুন Attribute সেট করা 
+myList.setAttribute('id','last-item')
+/* নতুন কোন এট্রিবিউট সেট করার জন্য 
+setAttribute ব্যবহার করা হয়। 
+
+
+এখানে myList[ul এর লাস্ট চাইল্ড] এর
+এট্রিবিউট id="last-item" সেট করেছি৷ 
+*/
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Object Literal with Methods 
+var rect={
+
+  width:100,
+  height:50,
+  
+  meth:function(){
+  console.log("Hello, I'm Anik")
+  console.log("My Width is:" + this.width)
+  console.log("My Height is:" + this.height)
+  }
+}
+rect.meth()
+/*কোন অবজেক্টে ফাংশন ব্যবহার করলে তাকে 
+মেথড বলে।
+
+এখানে meth এর মধ্যে ফাংশন রেখেছি, তাই এই 
+ফাংশনকে কল করার জন্য প্রথমে অবজেক্টের নাম
+(rect) তারপর ডট দিয়ে যার মধ্যে ফাংশন রেখেছি
+তার নাম(meth) দিতে হবে। 
+এভাবে rect.meth()
+
+
+
+
+কোন অবজেক্টের মধ্যে ঐ অবজেক্টের প্রোপার্টি 
+কল করার জন্য this ডট দিয়ে উক্ত প্রোপার্টি 
+দিতে হবে৷ এজন্য rect অবজেক্টের ভেতর
+width কল করার জন্য this.width দিয়েছি। 
+*/
+
+
+
+
+</script>
+</body>
+</html>

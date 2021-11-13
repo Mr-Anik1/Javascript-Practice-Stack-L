@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//return 
+function addAll(){
+     var sum=0
+     for(var i=0;i<arguments.length;i++){
+     sum+=arguments[i]
+     }
+     return sum
+}
+var result=addAll(1,2,3,4,2000)
+console.log(result)
+/*রিয়েল লাইফে প্রজেক্ট করার ক্ষেত্রে 
+return ব্যবহার হয়। return এর মাধ্যমে 
+কোন ভেরিয়েবলের মধ্যে ফলাফল স্টোর করা 
+যায়। 
+
+যেমন এখানে result ভেরিয়েবলের মধ্যে
+sum স্টোর করেছি।
+
+কোন ফাংশনে return এর পরে কোন কিছু
+লিখলে তা শো করবে না। 
+*/
+
+
+
+function person(name,email){
+      return{
+      Name:name,
+      Email:email
+      }
+}
+var p=person("Anik","anik2002bro@gmail.com")
+console.log(p)
+
+
+
+
+
+</script>
+</body>
+</html>

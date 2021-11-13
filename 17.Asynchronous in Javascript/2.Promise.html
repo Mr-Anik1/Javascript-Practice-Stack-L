@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//promise in javascript 
+
+/*
+let p1=new Promise((resolve,reject)=>{
+  setTimeout(resolve, 3000,'Hi anik')
+})
+
+p1.then((v)=>{
+ console.log(v)
+})
+*/
+
+
+function getPhone(isPassed){
+  let iph=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+     if(isPassed){
+       resolve('I got an iPhone')
+     }
+     else{
+       reject (new Error('I failed in the exam'))
+     }
+    },5000)
+  })
+  return iph
+}
+getPhone(false)
+  .then((res)=>{
+    console.log(res)
+  })
+ .catch((e)=>{
+  console.log(e.message)
+ })
+ 
+/* প্রথমে getPhone নাম একটি ফাংশন নিয়েছি 
+এর প্যারামিটারে isPassed নিয়েছি। এই ফাংশনের 
+ভিতরে iph নামক ভেরিয়েবলের মধ্যে new Promise()
+ক্রিয়েট করেছি। 
+
+new Promise এর মধ্যে Arrow Function ক্রিয়েট 
+করেছি এবং এর প্যারামিটারে resolve এবং reject 
+নিয়েছি। resolve দ্বারা True এবং reject দ্বারা 
+false কে ইঙ্গিত করে। 
+
+এই Arrow Function এর ভেতর setTimeout Function 
+নিয়েছি, এর ভেতরে if else কন্ডিশন নিয়েছি। যদি 
+isPassed ট্রু হয় তাহলে resolve অন্যথায় reject শো করবে। 
+setTimeout এর টাইম 5000 মিলি সেকেন্ড দিয়েছি। 
+
+এরপর iph return করেছি। 
+
+
+এবার getPhone ফাংশনটি কল করলে (true/false)
+এরপর .then এর ভেতর Arrow Function নিয়েছি 
+প্যারামিটারে res দিয়েছি এবং পরে  res কনসোল লগ 
+করেছি৷ 
+//then (try) এর মতো কাজ করে, কাজটি কম্পিলিট 
+হলে then এর কনসোল লগ হবে। 
+
+আবার, .catch এর ভেতর Arrow Function নিয়েছি 
+প্যারামিটারে e দিয়েছি এবং পরে e কনসোল লগ 
+করেছি৷ 
+//কাজটি false অর্থাৎ reject হলে catch এর কনসোল 
+লগ শো করবে। 
+*/
+
+
+
+
+let myPromise=sure=>{
+   return new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        if(sure){
+         resolve()
+        }
+        else{
+         reject()
+        }
+      },7000)
+   })
+}
+myPromise(false)
+   .then(()=>{
+     console.log('Yes You are Sure I am Mr.Anik')
+    })
+   .catch(()=>{
+     console.log('You are wrong, I\'m not Anik')
+    })
+    
+/* এখানে then এবং catch এর ভেতরে ম্যাসেজ শো 
+করিয়েছি, এক্ষেত্রে  then এবং catch এর প্যারামিটারে 
+কিছু দিতে হয় না। 
+*/
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//throw new Error() 
+
+try{
+console.log('I am Mr.Anik')
+throw new Error('I am Your Error')//নিজে Error তৈরী করলাম
+console.log('What\'s Your Name')
+}
+catch(e){
+ console.log(e.message)
+}
+/* try catch এর মাধ্যমে Error throw করা দেখিয়েছি।
+throw new Error() এর মাধ্যমে আমরা নিজেরা Error 
+throw(তৈরী) করতে পারি।
+
+এখানে Error throw করার পর নিচের লাইনগুলো আর এক্সিকিউট 
+হবে না। তাই নিচের লাইনের what's your name এটা কনসোল হয়নি। 
+যখনই Error পাবে তখনই সেটা catch ব্লকে চলে যাবে। 
+আর catch ব্লকের ম্যাসেজ শো করবে। 
+*/
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//else if ব্যবহার করে error handling 
+
+function changeInt(v){
+let result=Number.parseInt(v)
+  if(!result){
+  return 'Please Enter right Value '
+  }
+  return result
+}
+let res1=changeInt('23.6')
+console.log(res1)//23
+
+let res2=changeInt('৳@34৳.7')
+console.log(res2)//Please enter...
+
+/* ব্যবহারকারীকে ভেলু দিতে বলবে, কিন্তু ব্যবহারকারী 
+যদি ভুল কিছু দেয় তাহলে error দিয়ে বলবে 
+please enter right value.
+*/
+
+
+
+</script>
+</body>
+</html>

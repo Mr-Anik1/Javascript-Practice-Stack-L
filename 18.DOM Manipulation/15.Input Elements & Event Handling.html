@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+.go{
+   background:black;
+   color:yellow;
+   border:4px solid blue;
+   width:180px;
+   height:25px;
+}
+
+.ho{
+  color:red;
+  background:yellow;
+}
+
+</style>
+</head>
+<body>
+
+<label>What is your name?</label><br>
+<input type="text" class="go" id="inp" placeholder="Enter Your Name" >
+<p class="ho" id="po"></p>
+
+
+<script type="text/javascript">
+let myInput=document.getElementById("inp")
+let pa=document.getElementById("po")
+
+myInput.addEventListener("keypress", function(event){
+  if(event.key=="Enter"){
+    pa.innerHTML=`Your name is ${event.target.value}`
+  }
+  event.target.value=""
+})
+
+/* এখানে myInput এর addEventListener এর মধ্যে
+ইভেন্ট হিসেবে keypress দিয়েছি আর ফাংশনের প্যারামিটারে 
+event দিয়েছি। 
+
+এরপর if কন্ডিশনের মধ্যে event.key=="Enter" দিয়েছি, 
+মানে যখনই এন্টার প্রেস করব তখনই এটা কাজ করবে। 
+
+এরপর pa এর innerHTML =`your name is ${event.target.value}`
+দিয়েছি, এখন নামটা লিখে ক্লিক করলে শো করবেঃ your name is... 
+
+পরে event.target.value="" দিয়েছি, মানে ফাকা করে দিছি। 
+আমার নামটা লিখে এন্টার করার পর ইনপুট ফিল্ডটা ফাকা 
+হয়ে যাবে। 
+*/
+
+</script>
+</body>
+</html>

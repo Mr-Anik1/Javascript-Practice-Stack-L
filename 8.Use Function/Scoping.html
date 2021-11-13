@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Scoping
+var a="abc"
+
+function x(){
+var a="Anik"
+   function y(){
+   var a=20
+   console.log(a)//Ans:20
+   }
+   y()
+   console.log(a)//Ans:Anik
+}
+x()
+
+/*এখানে a হলো গ্লোবাল ভেরিয়েবল, 
+যেকোন জায়গা থেকে এটাতে এক্সেস নেওয়া যাবে। 
+
+এখানে x() এর মধ্যে যেটা আছে সেটার মধ্যে
+y() access নিতে পারবে। কিন্তু x() Function y()
+এর মধ্যে এক্সেস নিতে পারবে না। কারণ এখানে 
+x() হলো Parant আর y() হলো child.
+
+child ফাংশন parant এ এক্সেস নিতে পারবে।
+কিন্তু parant Function child ফাংশনে 
+এক্সেস নিতে পারবে না। 
+*/
+
+
+
+
+
+//parant ফাংশনে child ফাংশন এর এক্সেস নেওয়া
+var a="abc"
+
+function x(){
+var a="Anik"
+   function y(){
+   //var a=20
+   console.log(a)//Ans:Anik
+   }
+   y()
+   console.log(a)//Ans:Anik
+}
+x()
+/*এখানে child Function y() এর 
+ভেরিয়েবলকে কমেন্ট করে দিয়েছি। অর্থাৎ 
+তার এখন ভেরিয়েবল নেই। কিন্তু console.log(a)
+করলে Ans: Anik দেখাচ্ছে। 
+ 
+অর্থাৎ, y() ফাংশনটি তার parant Function x()
+এর ভেরিয়েবলকে এক্সেস নিয়েছে।
+*/
+
+
+
+//parant function, Child Function এ এক্সেস নিতে না পারা
+var a="abc"
+
+function x(){
+//var a="Anik"
+   function y(){
+   var a=20
+   console.log(a)//ans:20
+   }
+   y()
+   console.log(a)//ans:abc
+}
+x()
+/*এখানে parant x() এর ভেরিয়েবল নেই।
+কিন্তু সে তার চাইল্ড y() এর এক্সেস নিতে 
+পারবে না। 
+ 
+ 
+ তাই x() এর কনসোল লগে result এসেছে 
+ গ্লোবাল ভেরিয়েবল abc. 
+ অর্থাৎ, প্যারেন্ট গ্লোবাল ভেরিয়েবলের এক্সেস নিয়েছে।*/
+
+
+
+
+
+
+//parant ও child উভয়েই গ্লোবালে এক্সেস নেওয়া
+var a="abc"
+
+function x(){
+//var a="Anik"
+   function y(){
+   //var a=20
+   console.log(a)//ans:abc
+   }
+   y()
+   console.log(a)//ans:abc
+}
+x()
+/*এখানে parant ও child উভয়েরই ভেরিয়েবল নেই। 
+তাই তারা উভেয়ই গ্লোবাল ভেরিয়েবলের এক্সেস নিয়েছে।*/
+
+
+
+
+
+function test(n){
+   function a(){
+   return n%3==0
+   }
+   function b(){
+   return n%5==0
+   }
+   if(a() && b()){
+   console.log("3 & 5 divided")
+   }
+   else{
+   console.log("Not Valid Number")
+   }
+}
+test(10)//not valid number
+test(15)//3 & 5 divided 
+
+</script>
+</body>
+</html>

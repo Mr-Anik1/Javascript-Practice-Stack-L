@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Parents property নিজের মধ্যে Inheritance করা
+function Shape(color){
+  this.color=color
+}
+
+Shape.prototype.common=function(){
+ console.log("Hello Common")
+}
+
+
+function Square(wid,color){
+ Shape.call(this,color)//এখানে this হলো অবজেক্ট 
+ this.width=wid
+}
+/* এখানে Shape.call এর মাধ্যমে Shape এর 
+প্রোপার্টি(color) Square এর মধ্যে Inheritance 
+করা হয়েছে। 
+*/
+Square.prototype=Object.create(Shape.prototype)
+var s1=new Square(30,"green")
+console.log(s1)
+
+
+</script>
+</body>
+</html>

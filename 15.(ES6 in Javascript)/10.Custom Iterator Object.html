@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Custom iterator obj
+let obj={
+   start:1,
+   end:5,
+   [Symbol.iterator]:function(){
+   let currentValue=this.start
+   let tho=this.end
+     return{
+       next(){
+         return{
+          done:currentValue>tho,
+          value:currentValue>tho?'undefined':currentValue++
+         }
+       }
+     }
+   }
+}
+let iterate=obj[Symbol.iterator]()
+console.log(iterate.next())
+console.log(iterate.next())
+console.log(iterate.next())
+console.log(iterate.next())
+console.log(iterate.next())
+console.log(iterate.next())
+
+/*এখানে একটি অবজেক্ট কে iterate করেছি। 
+(সাধারণভাবে অবজেক্ট ইটারেট করা যায় না তাই এই সিস্টেম)
+
+Object এর প্রোপার্টি start ও end এর পর 
+[Symbol.iterator]:function() একটি ফাংশন 
+ক্রিয়েট করেছি। এর ভেতরে currentValue নামক 
+একটি ভেরিয়েবল নিয়েছি যেটা start কে ইঙ্গিত করে,
+আর tho নামক আরেকটি ভেরিয়েবল নিয়েছি যেটা end 
+কে ইঙ্গিত করে। 
+
+
+তারপর return{},next()এর পর আবার return করেছি 
+এর ভেতর done প্রোপার্টি তখনই true হবে যখন 
+currentValue টা end তথা tho এর থেকে বড় হবে। 
+★
+(নোটঃ this.end এখানে কাজ করবে না কারণ আরেকটি 
+ফাংশনের ভেতর চলে এসেছে৷ তাই tho এর ভেতর this.end
+রাখা হয়েছে এবং tho কে কল করা হচ্ছে।)
+★
+value টার এখানে টারনারী অপারেটর ব্যবহার করা হয়েছে, 
+যদি  currentValue টা end(tho) থেকে বড় হয় তবে 
+undefined শো করবে অন্যথায় currentValue++ হবে। 
+*/
+
+
+
+</script>
+</body>
+</html>

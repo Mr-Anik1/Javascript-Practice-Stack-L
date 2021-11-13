@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Inhance Object in ES6
+let a=10, b=20
+let obj={
+ a,
+ b,
+ print(){
+ console.log(this)
+ }
+}
+obj.print()
+/* ES6 ভার্সনে literal অবজেক্ট এ কিছু পরিবর্তন 
+এসেছে। যেমন object এর ভিতরে a এবং b 
+ভেরিয়েবল নিয়েছি। কিন্ত key কোথায়? 
+
+★এখানে অবজেক্ট এর কি এবং ভেলু একই তাই আলাদা
+করে কি লিখতে হয়নি। 
+
+★print নামক মেথড কল করেছি, কিন্তু ফাংশন কই?
+ES6 এ print() দ্বারাই বুঝবে এটি মেথড। 
+*/
+
+
+
+//উপরের কোডটা সাধারণভাবে লিখলে এরকম হতোঃ-
+let c=10, d=20
+let obj1={
+  c:c,
+  d:d,
+  print:function(){
+   console.log(this)
+  }
+}
+obj1.print()
+
+
+</script>
+</body>
+</html>

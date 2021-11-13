@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//catch block update
+
+try{
+console.log('I am Mr.Anik')
+throw new Error('I am Your Error')//নিজে Error তৈরী করলাম
+console.log('What\'s Your Name')
+}
+catch{//catch block এ কোন parameter দেই নি 
+ console.log('I\'m new Error handling in ES6 or Next')
+}
+finally{
+ console.log('I am Finally block')//finally block
+}
+/* catch block এর পর প্যারামিটারে e দিতে হয় 
+এরকমভাবেঃ catch(e){}
+
+
+কিন্তু ES6 এর নতুন আপডেটে এখন আর catch block 
+এ কোন প্যারামিটার দিতে হয় না, ডাইরেক্ট 
+catch{} এরকম লিখলেই হয়। 
+*/
+
+</script>
+</body>
+</html>

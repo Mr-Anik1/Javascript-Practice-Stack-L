@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//async function 
+async function test(){
+  return 'Test Value'
+}
+test().then(v=>alert(v))
+/* কোন ফাংশনের আগে async কিওয়ার্ড টি বসিয়ে 
+দিলেই সেটি প্রমিজ নিয়ে কাজ করার উপযোগী হয়ে 
+যায়। 
+
+প্রমিজ নিয়ে কাজ করার জন্য আগে new Promise()
+creat করতে হতো কিন্তু এই সিস্টেমে যেকোন ফাংশনের 
+আগে async বসিয়ে দিলেই প্রমিজ তৈরী হয়ে যায়। 
+*/
+
+
+//await এর কাজ 
+let p1=new Promise(resolve=>{
+  setTimeout(resolve,3000,'Hi Await')
+})
+
+async function t1(){
+  let v=await p1
+  console.log(v)
+}
+t1()//Hi Await
+/* প্রমিজ নিয়ে কাজ করতে গেলে আমাদের then, catch
+নিয়ে কাজ করতে হতো, কিন্তু সেই দিন শেষ। 
+
+এখন যেই প্রমিজ তৈরী করেছি তার পূর্বে await কিওয়ার্ডটি 
+লাগিয়ে দিলেই then/catch এর কাজ হয়ে যাবে। 
+তবে ফাংশনটিকে অবশ্যই async হতে হবে 
+*/
+
+
+
+//এখানে আরেকটা উদাহরণ হবে লিঙ্ক থেকে 
+//ডাটা বের করে আনার,সেটা এমবি ভরে করব
+
+
+
+//একাধিক প্রমিজ একসাথে হ্যান্ডেল করা
+
+let a1=[Promise.resolve(1),Promise.resolve(2),Promise.resolve(3)]
+
+async function allPromise(){
+  let all1=await Promise.all(a1)
+  console.log(all1)
+}
+allPromise()//1,2,3
+
+</script>
+</body>
+</html>

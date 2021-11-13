@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+
+while(true){
+var rand=Math.floor(Math.random()*10+1)
+ if(rand===4 || rand===6){
+   for(var i=1;i<=rand;i++){
+   var result=""
+    for(var j=1;j<=i;j++){
+    result+=j + " "
+    }
+   console.log(result)
+  }
+  break
+ }
+ else{
+   
+   for(var i=1;i<=rand;i++){
+   var res=""
+     for(var j=1;j<=rand;j++){
+     res+=" ★ "
+    }
+   console.log(res)
+  }
+ }
+}
+
+
+
+
+</script>
+</body>
+</html>

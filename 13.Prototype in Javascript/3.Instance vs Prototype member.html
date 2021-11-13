@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Instance vs Prototype Member
+
+var person=function(wid){
+ this.width=wid
+}
+/*এই person কনস্ট্রাকটরের ভেতরে যা আছে 
+সেগুলোকে Instance member বলে 
+*/
+
+person.prototype={
+
+   draw:function(){
+    console.log("Hello Anik")
+   },
+   
+   toString:function(){
+    return "My Width is = "+ this.width
+   }
+}
+/* একে প্রোটোটাইপ মেম্বার বলে। 
+person এর prototype হিসেবে এগুলো এড করা
+হয়েছে৷ */
+
+
+
+
+
+
+
+var p1=new person(34)
+console.log(p1)
+p1.draw()
+
+var p2=new person(5)
+console.log(p2)
+p2.draw()
+
+
+</script>
+</body>
+</html>

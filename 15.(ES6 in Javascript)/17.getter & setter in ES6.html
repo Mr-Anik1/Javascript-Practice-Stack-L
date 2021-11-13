@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//★Getter & Setter★
+
+//WeakMap() এ getter & setter
+const _name=new WeakMap()
+const _age=new WeakMap()
+class person{
+   constructor(nam,age){
+   _name.set(this,nam)
+   _age.set(this,age)
+   }
+   
+   msg(){
+    console.log(_name.get(this),_age.get(this))
+   }
+   
+   get names(){
+    return _name.get(this)//getter
+   }
+   
+   
+   set names(v){
+     _name.set(this,v)//setter
+   }
+   
+}
+let p1=new person("Anik",17)
+console.log(p1.names)//Anik
+
+p1.names="manik"//নতুন নাম দিলাম
+console.log(p1.names)//manik
+
+
+/* কোন প্রোপার্টি হাইড করা হলে সেটা আর বাইরে 
+থেকে এক্সেস নেওয়া যায় না। কিন্তু যদি চাই হাইড করা 
+প্রোপার্টিটি দেখতে তাহলেও পদ্ধতি আছে।
+
+$getter$
+★এখানে name টা শো করাতে চাচ্ছি। তাই 
+get এর পর names() নামক একটা ** নিয়েছি, 
+এরপর _name.get(this) কে রিটার্ন করেছি কারণ 
+এটাই নামকে ইঙ্গিত করে। 
+এরপর  p1.names কে কনসোল করলে সেটা Anik 
+শো করেছে৷ 
+
+অর্থাৎ,getter এর মাধ্যমে কোন হাইড করা প্রোপার্টি 
+পাওয়া যায়৷ 
+
+
+
+
+$Setter$
+এখানে name টা পরিবর্তন অর্থাৎ নতুন করে সেট করতে
+চাচ্ছি। তাই set এর পর names দিয়ে এর প্যারামিটারে 
+v দিয়েছি[ set names(v) ]
+এরপর _name.set(this,v) দিয়েছি অর্থাৎ ঐ প্যারামিটারে
+দেওয়া ভেলুটা this এর পর কমা দিয়ে দিয়েছি। 
+
+এরপর p1.names="manik" দিয়েছি, অর্থাৎ নতুন নাম সেট 
+করেছি৷ এখন p1.names কনসোল লগ করা হলে সেটা 
+manik শো করবে। 
+
+অর্থাৎ,setter এর মাধ্যমে নতুন কিছু সেট করা হয়৷ 
+
+
+★গুরুত্বপূর্ণ টপিক★
+setter করার জন্য অর্থাৎ নতুন কিছু সেট করার জন্য 
+অবশ্যই তার পূর্বে getter বের করে নিতে হবে। মানে 
+getter এর সিস্টেমটা ক্রিয়েট করতে হবে।
+*/
+
+
+
+
+
+
+
+//Symbol() এ getter & setter
+const _myAge=Symbol()
+const _myName=Symbol()
+class person2{
+   constructor(nam,age){
+     this[_myAge]=age
+     this[_myName]=nam
+   }
+   
+   get ages(){
+    return this[_myAge]//getter
+   }
+   
+   set ages(v){
+     this[_myAge]=v//setter
+   }
+}
+let p2=new person2("Anik",17)
+console.log(p2.ages)//17
+
+p2.ages=100//নতুন মান দিলাম 
+console.log(p2.ages)//100 নতুন মান
+
+/* এখানে age টার পরিবর্তন করেছি। 
+অর্থাৎ, age এর getter & setter করেছি। 
+*/
+
+</script>
+</body>
+</html>

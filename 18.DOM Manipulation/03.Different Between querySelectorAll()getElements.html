@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+
+<ul>
+  <li>Anik</li>
+  <li>Manik</li>
+  <li>Tonik</li>
+</ul>
+
+
+<script type="text/javascript">
+/* document.getElementById/TagName/ClassName/Name()
+এবং document.querySelectorAll()
+এর মধ্যে পার্থক্যঃ-
+*/
+
+let tagSelect=document.getElementsByTagName('li')
+console.log(tagSelect)//HTML Collection
+
+/* document.getElementsByTagName/Name/ClassName 
+এগুলো দ্বারা শুধু html collection অর্থাৎ html Elements 
+Select করা হয়। 
+
+তাই কনসোলে HTML Collection এসেছে
+*/
+
+
+let tagNameSelect=document.querySelectorAll("li")
+console.log(tagNameSelect);//Node List 
+
+/* document.querySelectorAll() দ্বারা আমরা 
+যেকোন নোড পেতে পারি এক্ষেত্রে আমরা যে শুধু 
+html elements পাব এরকম না। 
+ 
+যেকোন Elements, comments, text পেতে পারি। 
+*/
+
+
+
+
+/* ★শেষকথাঃ মূল পার্থক্য
+
+★document.getElementsByTagName/... দ্বারা আমরা শুধুমাত্র 
+html elements পাব। 
+
+★document.querySelectorAll() দ্বারা node list 
+অর্থাৎ যেকোন ধরণের Elements(সেটা html হতে পারে আবার 
+নাও হতে পারে),comments, text এগুলো পেতে পারি। 
+
+*/
+
+
+
+</script>
+</body>
+</html>

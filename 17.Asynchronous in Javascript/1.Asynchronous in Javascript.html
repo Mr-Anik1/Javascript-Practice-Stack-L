@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+//Asynchronous in Javascript 
+
+console.log('I\'m line 01')
+
+setTimeout(()=>{
+  console.log('I\'m line 02')
+},5000)
+
+setTimeout(()=>{
+   console.log('I\'m line 03')
+},2000)
+
+console.log('I\'m line 04')
+
+setTimeout(()=>{
+   console.log('I\'m line 05')
+},3000)
+
+
+/* Asynchronous মানে হলো কারো জন্য অপেক্ষা 
+করবে না, যেটা আগে কম্পিলিট হবে সেটা আগে শো 
+করবে। আর জাভাস্ক্রিপ্ট হলো Asynchronous. 
+
+
+c/java এই সকল ল্যাংগুয়েজ হলো synchronous. 
+এসব ল্যাংগুয়েজে অপেক্ষা করার নিয়ম আছে। অর্থাৎ,
+কারো কাজ শেষ না হওয়া পর্যন্ত অপেক্ষা করতে হবে। 
+কাজ শেষ হলে পরের লাইন এক্সিকিউট হবে। 
+★উপরের কোডটা c/java তে হলে ক্রমঅনুসারে 
+line 01,02,...,05 শো করত। 
+
+
+কিন্তু জাভাস্ক্রিপ্ট Asynchronous হওয়ায় যে লাইনের 
+কাজ আগে শেষ হয়েছে সেটা আগে শো করবে, পরে 
+ধাপে ধাপে যার কাজ শেষ হবে তাকে এক্সিকিউট করবে। 
+কারো জন্য অপেক্ষা করে বসে থাকবে না। 
+
+★একারণে প্রথমে line 01 
+ তারপর line 04 
+ এরপর ২ সেকেন্ড অপেক্ষা করে line 03
+ ৩ সেকেন্ড অপেক্ষা করে line 05
+ ৫ সেকেন্ড অপেক্ষা করে line 02
+ 
+ এক্সিকিউট হবে। 
+*/
+
+</script>
+</body>
+</html>

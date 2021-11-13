@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+//Higher Order Function
+function add(a,b){
+ return a+b
+}
+
+function manipulate(a,b,func){
+var c=a+b
+var d=a-b
+ 
+ function multiply(){
+ var m=func(a,b)
+ return c*d*m
+ }
+ return multiply
+
+}
+var k=manipulate(3,4,add)
+console.log(k())
+
+
+
+
+
+
+
+//another example 
+function caller(name){
+
+   return function(){
+   return "caller " + name
+   }
+
+}
+var a=caller("anik")
+//var y=a("Anik")
+console.log(a())
+
+
+
+</script>
+</body>
+</html>

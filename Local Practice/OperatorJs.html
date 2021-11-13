@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*Arithmetic Operator
+
++ - * / % ++ --
+  
+*/
+
+var a=5
+var b=3
+console.log(a%b)
+
+a=10
+b=5
+console.log(a%b)
+
+/*এই % অপারেটর দিয়ে ভাগশেষ নির্ণয় করা হয়। 
+প্রথমে a কে b দ্বারা ভাগ করা হয়েছে এক্ষেত্রে ভাগশেষ 
+২ হয়েছে। 
+
+আবার দ্বিতীয় ক্ষেত্রে ভাগশেষ ০ হয়েছে*/
+
+
+
+
+a=30
+console.log(a++)//post increment(Ans:30)
+console.log(a)//1 বৃদ্ধি পেয়ে Ans:31
+
+a=10
+console.log(++a)//pre increment (Ans:11)
+
+/*Post increment এ প্রথমে পূর্বের ভ্যালু শো করে
+পরে কনসোল করা হলে 1 করে বাড়ে
+
+pre increment এ প্রথমেই ভ্যালু 1 করে বাড়ে */
+
+
+//Decrement 
+a=10
+console.log(a--)//ans:10
+console.log(a)//1 কমে a এর মান 9
+
+console.log(--a)//প্রথমেই a(9) এর মান কমে 8 হয়েছে
+
+
+/*Assignment Operator 
++= -= *= /= %= */
+  
+a=10
+b=3
+
+a+=b//এটার মানে a=a+b
+console.log(a)//ans:13
+
+a*=b//এটার মানে a=a(13)*b(3)
+console.log(a)//ans:39
+
+b=13
+a/=b//এটার মানে a=a/b মানে (39/13)
+console.log(a)//ans:3
+
+
+/*Comparison Operators 
+== !== === > >= < <= */
+  
+a=10
+b=20
+console.log(a==b)//ans:False
+
+/*এই == অপারেটর দিয়ে ভ্যালুগলো সমান কিনা
+ তা চেক করে এখানে a ও b সমান না তাই রেজাল্ট False*/
+
+
+console.log(a!==b)//ans:true
+/*এই(!==) অপারেটর সমান না বুঝায়. 
+এখানে a ও b সমান না তাই true হয়েছে*/
+
+
+a=5
+b=3
+console.log(a>b)//ans:true
+//a এর মান b এর থেকে বড় তাই true
+
+a=5
+b=5
+console.log(a>=b)//ans:true
+//a এর মান বড় বা সমান হলে true
+
+
+
+a=7
+b=4
+console.log(a<b)//false
+
+a=3
+b=4
+console.log(a<=b)//true
+//a এর মান b এর থেকে ছোট বা সমান
+
+
+
+
+
+a='50'
+b=50
+console.log(a==b)
+/*এখানে a স্ট্রিং আর b নাম্বার, কিন্তু 
+রেজাল্ট true দেখাচ্ছে যা সঠিক না। কারণ স্ট্রিং 
+আর নাম্বার সমান হতে পারে না.
+
+
+এই সমস্যা সমাধানের জন্য এই(===)অপারেটর
+ব্যবহার করা হয়। এটি স্ট্রিং ও নম্বারের পার্থক্য 
+বুঝতে পারে */
+
+console.log(a===b)//false
+
+
+
+
+//value টা স্ট্রিং নাকি নাম্বার সেটা চেক
+console.log(typeof 100)//ans:number
+console.log(typeof'Anik')//ans:string
+/*এখানে 100 হলো Number তাই রেজাল্ট Number
+Anik হলো স্ট্রিং তাই রেজাল্ট string*/
+
+    
+
+
+
+</script>
+
+</body>
+</html>

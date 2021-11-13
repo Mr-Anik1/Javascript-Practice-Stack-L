@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*reduce function এর মাধ্যমে কোন 
+অ্যারের যোগ,বিয়োগ...,সর্বোচ্চ/সর্বনিম্ন মান 
+বের করা যায়। 
+*/
+var a=[12,21,3,4,5,65,34,1,78,90,4,32]
+
+var sum=a.reduce(function(pre,current){
+ return pre+current
+},a[0])
+console.log(sum)
+/*এখানে যোগ করার জন্য sum নামক একটি 
+ভেরিয়েবল নিয়েছি, তারপর reduce এর ভেতরে 
+একটি ফাংশন ক্রিয়েট করেছি, ফাংশনের
+প্যারামিটারে previous এবং current নামক 
+দুটি অপশন দিয়েছি, কেউ চাইলেঃ-
+function(pre,curr,index,array) দিতে পারে। 
+
+যেহেতু যোগ করব তাই pre ও current যোগ 
+করে রিটার্ন করেছি। 
+
+আর ফাংশনের পরে যে a[0] দিয়েছি এটার 
+মানে হলোঃ-এই অ্যারেটার জিরো নাম্বার ইনডেক্স 
+থেকে গণনা শুরু করবে। 
+*/
+
+
+
+
+//সর্বোচ্চ মান বের করা
+var maxValue=a.reduce(function(pre,curr){
+  return Math.max(pre,curr)
+},a[0])
+console.log(maxValue)//Ans:90
+/*জাভাস্ক্রিপ্ট এ সর্বোচ্চ মান বের করার জন্য 
+Math.max() ব্যবহার করতে হয়। তাই 
+Math.max এর ভেতর previous এবং current
+ভেলু রেখে রিটার্ন করেছি! 
+*/
+
+
+
+
+
+//reduce function এর manipulation 
+var arr=[12,13,14,1,2,4,56,78,9]
+
+function hiReduce(arr,cb,acc){
+ for(var i=0;i<arr.length;i++){
+ acc=cb(acc,arr[i])
+ }
+ return acc
+}
+/*এখানে hiReduce নামক একটি ফাংশন নিয়েছি
+এর প্যারামিটারে উক্ত array,callback এবং 
+accumulator নিয়েছি। 
+
+এরপর একটি ফর লুপ চালিয়েছি, এখানে ধরি 
+সর্বশেষ রেজাল্ট accmulator. তাই acc এর 
+মধ্যে কলবেক ফাংশন নিয়েছি আর এর ভেতর 
+উক্ত accmulator এবং অ্যারের ভেলু(a[i])
+নিয়েছি। 
+
+accmulator টি রিটার্ন করেছি(return acc)
+*/
+
+//সর্বনিম্ন মান
+var minValue=hiReduce(arr,function(pre,curr){
+ return Math.min(pre,curr)
+},a[0])
+console.log(minValue)//Ans:1
+
+
+
+</script>
+</body>
+</html>

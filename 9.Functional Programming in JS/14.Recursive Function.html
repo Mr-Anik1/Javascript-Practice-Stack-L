@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*লুপ ব্যবহার না করে কোন কিছু অসংখ্যবার 
+কনসোল করার জন্য Recursive Function 
+ব্যবহার হয়। */
+
+//Recursive Function 
+function hi(n){
+  if(n===0){
+   return 
+  }
+  console.log("Hello kitty")
+  hi(n-1)
+}
+hi(3)
+/*এখানে hi ফাংশন কল করেছি এবং এর 
+প্যারামিটারে n দিয়েছি। তারপর একটি কন্ডিশন 
+দিয়েছি যদি n=0 হয় তাহলে এটি রিটার্ন করবে 
+নাহলে কনসোল লগ করবে। 
+
+পরে hi কল হবে তবে এর আর্গুমেন্টে  n-1 হবে।
+সবশেষে hi function call করে এর মধ্যে,
+ইচ্ছামতো সংখ্যা দিতে হবে। hi(3)
+
+
+এখানে hi(3) call করার পর, এটি উপরের hi 
+ফাংশনে চলে গেছে এবং n এর ভেলু 3 হয়েছে। 
+তারপর কন্ডিশন চেক করেছে, যেহেতু n=0 হয়নি, 
+তাই এটি নিচে গিয়ে একবার hello kitty 
+কনসোল লগ করেছে। 
+ 
+পরে hi কল হয়ে n থেকে এক কমিয়ে দিয়েছে।
+hi(n-1). এখন n এর মান হলো 2.এটি আবার 
+কন্ডিশন চেক করবে, n=0 না হওয়া পর্যন্ত এটি 
+কনসোল লগ করবে।  0 হয়ে গেলে এটি থামবে। 
+*/
+
+
+
+
+//যোগ করা
+function sum(n){
+  if(n===1){
+   return 1
+  }
+  return n + sum(n-1)
+}
+console.log(sum(5))
+
+
+
+
+
+
+//কোন অ্যারের যোগ 
+var a=[1,6,2,5,4,3]
+function su(a,LastIndex){
+ if(LastIndex<0){
+  return 0
+ }
+ return a[LastIndex] + su(a,LastIndex-1)
+}
+console.log(su(a,a.length-1))
+
+
+
+//জোড় সংখ্যার যোগ
+var s=0
+function h(n){
+ if(n==1){
+ return 1
+ }
+ h(n-1)
+ if(n%2==0){
+  return s=s+n
+ }
+ 
+}
+h(11)
+console.log(s)
+
+</script>
+</body>
+</html>
